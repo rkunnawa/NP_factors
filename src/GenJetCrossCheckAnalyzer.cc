@@ -142,7 +142,7 @@ dijetEtaWeights_(iConfig.getParameter<std::vector<double> >("dijetEtaWeights"))
 
    //hist_["qscale"] = fs->make<TH1F>("qscale",";p_{T}-hat;counts",1000,0.,1000.);
 
-   //hist_["events"] = fs->make<TH1F>("events",";;events",1,0.,2.);
+   hist_["events"] = fs->make<TH1F>("events",";;events",1,0.,2.);
    //hist_["events_DS"] = fs->make<TH1F>("events_DS",";;double sided events",1,0.,2.);
 
    //hist2D_["cmatrix"] = fs->make<TH2F>("cmatrix",";p_{T} Jet;p_{T} h^{#pm}",1000,0.,1000.,1000,0.,200.);
@@ -206,9 +206,9 @@ GenJetCrossCheckAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetu
    iEvent.getByLabel(genParticleSrc_,pcol);
    
    Handle<reco::JetMatchedPartonsCollection> fcol;
-   if( doFlavor_) iEvent.getByLabel(flavorSrc_,fcol);
+   //if( doFlavor_) iEvent.getByLabel(flavorSrc_,fcol);
 
-   //hist_["events"]->Fill(1);
+   hist_["events"]->Fill(1);
    //if(isDS) hist_["events_DS"]->Fill(1);
    //hist_["qscale"]->Fill(genEvtInfo->qScale());
 

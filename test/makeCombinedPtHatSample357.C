@@ -1,9 +1,9 @@
 {
 
-  char energy[256] = "7000";
+  char energy[256] = "2760";
 
   //const int MAXDIR = 61;
-  const int MAXDIR = 5;
+  const int MAXDIR = 50;
 
   // cross sections from the Pythia simulations:
 
@@ -13,132 +13,75 @@
   //double xsec[10] = {6.198e+01, 5.135e-02, 9.742e-03, 9.250e-04,
   //                   8.812e-05, 9.771e-06, 1.256e-06, 1.795e-07,
   //                   2.708e-08, 4.735e-09};
+  //2.76 these below are the exact values for the different pthats mentioned below. have to subtract them to get what we want. 
+  //double xsec[10] = {2.034e-01,1.075e-02,1.025e-03,9.865e-05,1.465e-06,2.837e-07,5.323e-08,5.934e-09,8.125e-10,1.467e-10};
+  // following is correct
+  //double xsec[12] = {0.7966,0.19265,0.009725,0.00092635,8.736e-05,9.825e-06,1.1813e-06,2.3047e-07,4.7296e-08,5.1215e-09,6.658e-10,1.467e-10};
+  // following is added to check for the initial pthat process 
+  //double xsec[12] = {2.034e-01,0.19265,0.009725,0.00092635,8.736e-05,9.825e-06,1.1813e-06,2.3047e-07,4.7296e-08,5.1215e-09,6.658e-10,1.467e-10};
+  double xsec[12] = {61.77,0.19265,0.009725,0.00092635,8.736e-05,9.825e-06,1.1813e-06,2.3047e-07,4.7296e-08,5.1215e-09,6.658e-10,1.467e-10};
 
   // for 5.02 TeV
   //double xsec[10] = {6.782e+01, 1.405e-01, 2.995e-02, 3.334e-03,
   //                  3.800e-04, 5.138e-05, 8.251e-06, 1.525e-06,
   //                   3.141e-07, 9.160e-08};
+  //5.02 new, the last value here is wrong. make sure of that. and this doesnt have pthat value 540. remove that when running this for 5.02TeV  
+  // double xsec[10] = {5.335e-01,3.378E-02,3.778E-03,4.412E-04,6.147E-05,1.018E-05,2.477E-06,6.160E-07,1.088E-07,2.527E-08,1.467E-10};
+  // double xsec[11] = {1.8695,0.49972,0.030002,0.0033368,0.00037973,5.129e-05,7.703e-06,1.861e-06,5.072e-07,8.353e-08,2.527e-08};
 
   // for 7 TeV
-  double xsec[10] = {7.131e+01, 2.359e-01, 5.307e-02, 6.354e-03,
-                     7.837e-04, 1.152e-04, 2.015e-05, 4.094e-06,
-                     9.351e-07, 3.221e-07};
+  //double xsec[10] = {7.131e+01, 2.359e-01, 5.307e-02, 6.354e-03,
+  //                   7.837e-04, 1.152e-04, 2.015e-05, 4.094e-06,
+  //                   9.351e-07, 3.221e-07};
   
+  //the ones here were the old values. adding the new values 
 
   // need to fix first entry given as 0-inf. Subtract all 
   // other xsecs to get 0-20
-  double xsec20toinf = 0.0;
+  double xsec15toinf = 0.0;
   double totalxsec = xsec[0];
-  for( int i=1;i<10;i++) xsec20toinf += xsec[i];
-  xsec[0] = xsec[0] - xsec20toinf;
+  for( int i=1;i<12;i++) xsec15toinf += xsec[i];
+  xsec[0] = xsec[0] - xsec15toinf;
 
   // open files and get spectra and event counts 
-  TFile * f[10];
-  char rpthats[10][256] = {"0to20","20to30","30to50","50to80",
-                           "80to120","120to170","170to230",
-                           "230to300","300to380","380toinf"};
+  TFile * f[12];
+  char rpthats[12][256] = {"0to15","15to30","30to50","50to80","80to120","120to170","170to220","220to280","280to370","370to460","460to540","540to5000"};
+  //char rpthats[12][256] = {"0to15","15to30","30to50","50to80","80to120","120to170","170to220","220to280","280to370","370to460","460to540","540to5000"};
 
   char dirname[MAXDIR][256] = {
-/*        "ak3GenJetSpectrum_n22_n12",
-        "ak3GenJetSpectrum_n12_n07",
-        "ak3GenJetSpectrum_n07_n03",
-        "ak3GenJetSpectrum_n03_p03",
-        "ak3GenJetSpectrum_p03_p07",
-        "ak3GenJetSpectrum_p07_p12",
-        "ak3GenJetSpectrum_p12_p22",
-        "ak3GenJetSpectrum_n10_p10",
-
-        "ak4GenJetSpectrum_n22_n12",
-        "ak4GenJetSpectrum_n12_n07",
-        "ak4GenJetSpectrum_n07_n03",
-        "ak4GenJetSpectrum_n03_p03",
-        "ak4GenJetSpectrum_p03_p07",
-        "ak4GenJetSpectrum_p07_p12",
-        "ak4GenJetSpectrum_p12_p22",
-        "ak4GenJetSpectrum_n10_p10",
-
-        "ak5GenJetSpectrum_n22_n12",
-        "ak5GenJetSpectrum_n12_n07",
-        "ak5GenJetSpectrum_n07_n03",
-        "ak5GenJetSpectrum_n03_p03",
-        "ak5GenJetSpectrum_p03_p07",
-        "ak5GenJetSpectrum_p07_p12",
-        "ak5GenJetSpectrum_p12_p22",
-        "ak5GenJetSpectrum_n10_p10",
-
-        "ak7GenJetSpectrum_n22_n12",
-        "ak7GenJetSpectrum_n12_n07",
-        "ak7GenJetSpectrum_n07_n03",
-        "ak7GenJetSpectrum_n03_p03",
-        "ak7GenJetSpectrum_p03_p07",
-        "ak7GenJetSpectrum_p07_p12",
-        "ak7GenJetSpectrum_p12_p22",
-        "ak7GenJetSpectrum_n10_p10",
-
-        "ak3GenJetSpectrum_QCD10001_00_05",
-        "ak3GenJetSpectrum_QCD10001_05_10",
-        "ak3GenJetSpectrum_QCD10001_10_15",
-        "ak3GenJetSpectrum_QCD10001_15_20",
-        "ak3GenJetSpectrum_QCD10001_20_25",
-        "ak3GenJetSpectrum_QCD10001_25_30",
-
-        "ak4GenJetSpectrum_QCD10001_00_05",
-        "ak4GenJetSpectrum_QCD10001_05_10",
-        "ak4GenJetSpectrum_QCD10001_10_15",
-        "ak4GenJetSpectrum_QCD10001_15_20",
-        "ak4GenJetSpectrum_QCD10001_20_25",
-        "ak4GenJetSpectrum_QCD10001_25_30",
-
-        "ak5GenJetSpectrum_QCD10001_00_05",
-        "ak5GenJetSpectrum_QCD10001_05_10",
-        "ak5GenJetSpectrum_QCD10001_10_15",
-        "ak5GenJetSpectrum_QCD10001_15_20",
-        "ak5GenJetSpectrum_QCD10001_20_25",
-        "ak5GenJetSpectrum_QCD10001_25_30",
-
-        "ak7GenJetSpectrum_QCD10001_00_05",
-        "ak7GenJetSpectrum_QCD10001_05_10",
-        "ak7GenJetSpectrum_QCD10001_10_15",
-        "ak7GenJetSpectrum_QCD10001_15_20",
-        "ak7GenJetSpectrum_QCD10001_20_25",
-        "ak7GenJetSpectrum_QCD10001_25_30",
-
-        "ak7GenJetSpectrum_QCD11004_00_05",
-        "ak7GenJetSpectrum_QCD11004_05_10",
-        "ak7GenJetSpectrum_QCD11004_10_15",
-        "ak7GenJetSpectrum_QCD11004_15_20",
-        "ak7GenJetSpectrum_QCD11004_20_25"
-    */
- 
-        "ak3GenJetSpectrum_QCD11004_00_05",
-        "ak3GenJetSpectrum_QCD11004_05_10",
-        "ak3GenJetSpectrum_QCD11004_10_15",
-        "ak3GenJetSpectrum_QCD11004_15_20",
-        "ak3GenJetSpectrum_QCD11004_20_25"  
-
+    "ak3GenJetSpectrum_n10_p10","ak3GenJetSpectrum_n20_p20","ak3GenJetSpectrum_n25_n20","ak3GenJetSpectrum_n20_n15",
+    "ak3GenJetSpectrum_n15_n10","ak3GenJetSpectrum_n10_n05","ak3GenJetSpectrum_n05_p05","ak3GenJetSpectrum_p05_p10",
+    "ak3GenJetSpectrum_p10_p15","ak3GenJetSpectrum_p15_p20",
+    "ak2GenJetSpectrum_n10_p10","ak2GenJetSpectrum_n20_p20","ak2GenJetSpectrum_n25_n20","ak2GenJetSpectrum_n20_n15",
+    "ak2GenJetSpectrum_n15_n10","ak2GenJetSpectrum_n10_n05","ak2GenJetSpectrum_n05_p05","ak2GenJetSpectrum_p05_p10",
+    "ak2GenJetSpectrum_p10_p15","ak2GenJetSpectrum_p15_p20",
+    "ak4GenJetSpectrum_n10_p10","ak4GenJetSpectrum_n20_p20","ak4GenJetSpectrum_n25_n20","ak4GenJetSpectrum_n20_n15",
+    "ak4GenJetSpectrum_n15_n10","ak4GenJetSpectrum_n10_n05","ak4GenJetSpectrum_n05_p05","ak4GenJetSpectrum_p05_p10",
+    "ak4GenJetSpectrum_p10_p15","ak4GenJetSpectrum_p15_p20",
+    "ak5GenJetSpectrum_n10_p10","ak5GenJetSpectrum_n20_p20","ak5GenJetSpectrum_n25_n20","ak5GenJetSpectrum_n20_n15",
+    "ak5GenJetSpectrum_n15_n10","ak5GenJetSpectrum_n10_n05","ak5GenJetSpectrum_n05_p05","ak5GenJetSpectrum_p05_p10",
+    "ak5GenJetSpectrum_p10_p15","ak5GenJetSpectrum_p15_p20",
+    "ak7GenJetSpectrum_n10_p10","ak7GenJetSpectrum_n20_p20","ak7GenJetSpectrum_n25_n20","ak7GenJetSpectrum_n20_n15",
+    "ak7GenJetSpectrum_n15_n10","ak7GenJetSpectrum_n10_n05","ak7GenJetSpectrum_n05_p05","ak7GenJetSpectrum_p05_p10",
+    "ak7GenJetSpectrum_p10_p15","ak7GenJetSpectrum_p15_p20"
     };
 
-  double etaWid[MAXDIR] = { /*
-                       1.0,0.5,0.4,0.6,0.4,0.5,1.0,2.0,
-                       1.0,0.5,0.4,0.6,0.4,0.5,1.0,2.0,
-                       1.0,0.5,0.4,0.6,0.4,0.5,1.0,2.0,
-                       1.0,0.5,0.4,0.6,0.4,0.5,1.0,2.0,
-                       1.0,1.0,1.0,1.0,1.0,1.0,
-                       1.0,1.0,1.0,1.0,1.0,1.0,
-                       1.0,1.0,1.0,1.0,1.0,1.0,
-                       1.0,1.0,1.0,1.0,1.0,1.0, */
-                       1.0,1.0,1.0,1.0,1.0
-
-};
+  double etaWid[MAXDIR] = { 2.0,4.0,0.5,0.5,0.5,0.5,1.0,0.5,0.5,0.5,
+                            2.0,4.0,0.5,0.5,0.5,0.5,1.0,0.5,0.5,0.5,
+                            2.0,4.0,0.5,0.5,0.5,0.5,1.0,0.5,0.5,0.5,
+                            2.0,4.0,0.5,0.5,0.5,0.5,1.0,0.5,0.5,0.5,
+                            2.0,4.0,0.5,0.5,0.5,0.5,1.0,0.5,0.5,0.5
+  };
 
   // retrieve and normalize spectra
-  TH1F * spectrum[10][MAXDIR];
-  TH1F * spectrumf[10][MAXDIR];
-  TH1F * events[10][MAXDIR];
-  double nevt[10][MAXDIR]; 
-  for( int i=0; i<10;i++)
+  TH1F * spectrum[12][MAXDIR];
+  TH1F * spectrumf[12][MAXDIR];
+  TH1F * events[12][MAXDIR];
+  double nevt[12][MAXDIR]; 
+  for( int i=0; i<12;i++)
   {
-    f[i] = new TFile(Form("AnaGENJetR357_%sGeV_Apr16_Z2Pt%s_numEvent640000.root",energy,rpthats[i]));
+    //do it once for HAD and once for LO
+    f[i] = new TFile(Form("rootfiles/GenJet_HAD_R23457_%s_July8_Z2pt%s_numEvent100000.root",energy,rpthats[i]));
     for( int j=0; j<MAXDIR; j++)
     {
       events[i][j] = (TH1F *) f[i]->Get(Form("%s/events",dirname[j]));
@@ -177,13 +120,13 @@
   TH1F * spectrum_out[MAXDIR];
   TH1F * spectrumf_out[MAXDIR];
 
-  TFile * f_out = new TFile(Form("AnaGENJetR357_%sGeV_Apr16_Z2Combined.root",energy),"RECREATE");
+  TFile * f_out = new TFile(Form("rootfiles/GenJet_HAD_R23457_%sGeV_July8_Z2Combined.root",energy),"RECREATE");
 
   for( int j=0;j<MAXDIR;j++)
   {
     TDirectory * tdir = f_out->mkdir(dirname[j]);
-    for( int i=1;i<10;i++) spectrum[0][j]->Add(spectrum[i][j],1.0);
-    for( int i=1;i<10;i++) spectrumf[0][j]->Add(spectrumf[i][j],1.0);
+    for( int i=1;i<12;i++) spectrum[0][j]->Add(spectrum[i][j],1.0);
+    for( int i=1;i<12;i++) spectrumf[0][j]->Add(spectrumf[i][j],1.0);
     spectrum_out[j] =  (TH1F *) spectrum[0][j]->Clone(Form("JetSpectrum"));
     spectrum_out[j]->SetDirectory(tdir);
     spectrumf_out[j] = (TH1F *) spectrumf[0][j]->Clone(Form("JetSpectrum_Fine"));

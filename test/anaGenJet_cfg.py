@@ -578,40 +578,6 @@ process.ana_step = cms.Path(
     process.ak7GenJetSpectrum_p10_p15 *
     process.ak7GenJetSpectrum_p15_p20 
 
-#    process.ak5GenJetSpectrum_QCD10001_00_05 *
-#    process.ak5GenJetSpectrum_QCD10001_05_10 *
-#    process.ak5GenJetSpectrum_QCD10001_10_15 *
-#    process.ak5GenJetSpectrum_QCD10001_15_20 *
-#    process.ak5GenJetSpectrum_QCD10001_20_25 *
-#    process.ak5GenJetSpectrum_QCD10001_25_30 *
-#    process.ak3GenJetSpectrum_QCD10001_00_05 *
-#    process.ak3GenJetSpectrum_QCD10001_05_10 *
-#    process.ak3GenJetSpectrum_QCD10001_10_15 *
-#    process.ak3GenJetSpectrum_QCD10001_15_20 *
-#    process.ak3GenJetSpectrum_QCD10001_20_25 *
-#    process.ak3GenJetSpectrum_QCD10001_25_30 *
-#    process.ak4GenJetSpectrum_QCD10001_00_05 *
-#    process.ak4GenJetSpectrum_QCD10001_05_10 *
-#    process.ak4GenJetSpectrum_QCD10001_10_15 *
-#    process.ak4GenJetSpectrum_QCD10001_15_20 *
-#    process.ak4GenJetSpectrum_QCD10001_20_25 *
-#    process.ak4GenJetSpectrum_QCD10001_25_30 *
-#    process.ak7GenJetSpectrum_QCD10001_00_05 *
-#    process.ak7GenJetSpectrum_QCD10001_05_10 *
-#    process.ak7GenJetSpectrum_QCD10001_10_15 *
-#    process.ak7GenJetSpectrum_QCD10001_15_20 *
-#    process.ak7GenJetSpectrum_QCD10001_20_25 *
-#    process.ak7GenJetSpectrum_QCD10001_25_30 *
-#    process.ak7GenJetSpectrum_QCD11004_00_05 *
-#    process.ak7GenJetSpectrum_QCD11004_05_10 *
-#    process.ak7GenJetSpectrum_QCD11004_10_15 *
-#    process.ak7GenJetSpectrum_QCD11004_15_20 *
-#    process.ak7GenJetSpectrum_QCD11004_20_25 *
-#    process.ak3GenJetSpectrum_QCD11004_00_05 *
-#    process.ak3GenJetSpectrum_QCD11004_05_10 *
-#    process.ak3GenJetSpectrum_QCD11004_10_15 *
-#    process.ak3GenJetSpectrum_QCD11004_15_20 *
-#    process.ak3GenJetSpectrum_QCD11004_20_25 
 )
 
 process.schedule = cms.Schedule(process.gen_step,
