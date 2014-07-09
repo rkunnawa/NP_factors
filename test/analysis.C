@@ -129,8 +129,8 @@ void analysis(int energy = 5020){
     	HAD_spectra[i] = (TH1F*)fin_HAD->Get(Form("%s/JetSpectrum",dirName[i]));
     	HAD_spectraFine[i] = (TH1F*)fin_HAD->Get(Form("%s/JetSpectrum_Fine",dirName[i]));
 
-    	NPC[i] = (TH1F*)LO_spectra[i]->Clone(Form("LO_NPC_%s",dirName[i]));
-    	NPC[i]->Divide(HAD_spectra[i]);
+    	NPC[i] = (TH1F*)HAD_spectra[i]->Clone(Form("HAD_NPC_%s",dirName[i]));
+    	NPC[i]->Divide(LO_spectra[i]);
 
     }
 
