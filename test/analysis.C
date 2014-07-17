@@ -47,7 +47,7 @@ using namespace std;
 static const int dir = 50;
 
 
-void analysis(int energy = 2760){
+void analysis(int energy = 5020){
 
 	TStopwatch timer;
 	timer.Start();
