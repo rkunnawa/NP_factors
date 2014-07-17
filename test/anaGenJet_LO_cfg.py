@@ -70,7 +70,7 @@ from IOMC.RandomEngine.RandomServiceHelper import RandomNumberServiceHelper
 randSvc = RandomNumberServiceHelper(process.RandomNumberGeneratorService)
 randSvc.populate()
 
-process.MessageLogger.cerr.FwkReport.reportEvery = 10
+process.MessageLogger.cerr.FwkReport.reportEvery = 1000
 
 # ============= Pythia setting  ================================
 from Configuration.Generator.PythiaUEZ2Settings_cfi import *
@@ -85,9 +85,15 @@ process.generator = cms.EDFilter("Pythia6GeneratorFilter",
     comEnergy = cms.double(2760.0),
     maxEventsToPrint = cms.untracked.int32(0),
     PythiaParameters = cms.PSet(
-         pythiaUESettingsBlock,
+         pythiaUESettings = cms.vstring(
+            #'MSTU(21)=1     ! Check on possible errors during program execution', 
+            #'MSTJ(22)=2     ! Decay those unstable particles', 
+            'MSTP(81)=20 ! define the MPI',# was 20
+            'MSTP(111) = 0 !hadronization off',
+            ),
          processParameters = cms.vstring(
                  'MSEL=1         ! High Pt QCD',
+                 #'CKIN(3)=15 ! minimum pthat for hard interactions',
                  ),
          parameterSets = cms.vstring('pythiaUESettings',
                                      'processParameters',

@@ -1,0 +1,623 @@
+Center-of-mass energy:  2760.0
+PYTHIA process parameters:  ['MSEL=1']
+Minimum pt-hat: 80
+Minimum pt-hat: 120
+cms.vstring('MSEL=1', 
+    'CKIN(3)=80', 
+    'CKIN(4)=120')
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Pythia process: NSD
+Begin processing the 1st record. Run 1, Event 1, LumiSection 1 at 16-Jul-2014 23:15:21.833 CEST
+Begin processing the 1001st record. Run 1, Event 1001, LumiSection 1 at 16-Jul-2014 23:16:10.417 CEST
+Begin processing the 2001st record. Run 1, Event 2001, LumiSection 1 at 16-Jul-2014 23:16:56.281 CEST
+Begin processing the 3001st record. Run 1, Event 3001, LumiSection 1 at 16-Jul-2014 23:17:41.451 CEST
+Begin processing the 4001st record. Run 1, Event 4001, LumiSection 1 at 16-Jul-2014 23:18:23.295 CEST
+Begin processing the 5001st record. Run 1, Event 5001, LumiSection 1 at 16-Jul-2014 23:19:11.589 CEST
+Begin processing the 6001st record. Run 1, Event 6001, LumiSection 1 at 16-Jul-2014 23:20:01.152 CEST
+Begin processing the 7001st record. Run 1, Event 7001, LumiSection 1 at 16-Jul-2014 23:20:46.860 CEST
+Begin processing the 8001st record. Run 1, Event 8001, LumiSection 1 at 16-Jul-2014 23:21:30.006 CEST
+Begin processing the 9001st record. Run 1, Event 9001, LumiSection 1 at 16-Jul-2014 23:22:15.033 CEST
+Begin processing the 10001st record. Run 1, Event 10001, LumiSection 1 at 16-Jul-2014 23:23:03.923 CEST
+Begin processing the 11001st record. Run 1, Event 11001, LumiSection 1 at 16-Jul-2014 23:23:52.272 CEST
+Begin processing the 12001st record. Run 1, Event 12001, LumiSection 1 at 16-Jul-2014 23:24:37.501 CEST
+Begin processing the 13001st record. Run 1, Event 13001, LumiSection 1 at 16-Jul-2014 23:25:25.329 CEST
+Begin processing the 14001st record. Run 1, Event 14001, LumiSection 1 at 16-Jul-2014 23:26:12.570 CEST
+Begin processing the 15001st record. Run 1, Event 15001, LumiSection 1 at 16-Jul-2014 23:27:01.901 CEST
+Begin processing the 16001st record. Run 1, Event 16001, LumiSection 1 at 16-Jul-2014 23:27:45.337 CEST
+Begin processing the 17001st record. Run 1, Event 17001, LumiSection 1 at 16-Jul-2014 23:28:27.665 CEST
+Begin processing the 18001st record. Run 1, Event 18001, LumiSection 1 at 16-Jul-2014 23:29:11.380 CEST
+Begin processing the 19001st record. Run 1, Event 19001, LumiSection 1 at 16-Jul-2014 23:29:54.824 CEST
+Begin processing the 20001st record. Run 1, Event 20001, LumiSection 1 at 16-Jul-2014 23:30:40.022 CEST
+Begin processing the 21001st record. Run 1, Event 21001, LumiSection 1 at 16-Jul-2014 23:31:23.324 CEST
+Begin processing the 22001st record. Run 1, Event 22001, LumiSection 1 at 16-Jul-2014 23:32:08.033 CEST
+Begin processing the 23001st record. Run 1, Event 23001, LumiSection 1 at 16-Jul-2014 23:32:53.885 CEST
+Begin processing the 24001st record. Run 1, Event 24001, LumiSection 1 at 16-Jul-2014 23:33:40.074 CEST
+Begin processing the 25001st record. Run 1, Event 25001, LumiSection 1 at 16-Jul-2014 23:34:26.245 CEST
+Begin processing the 26001st record. Run 1, Event 26001, LumiSection 1 at 16-Jul-2014 23:35:08.812 CEST
+Begin processing the 27001st record. Run 1, Event 27001, LumiSection 1 at 16-Jul-2014 23:35:52.305 CEST
+Begin processing the 28001st record. Run 1, Event 28001, LumiSection 1 at 16-Jul-2014 23:36:35.624 CEST
+Begin processing the 29001st record. Run 1, Event 29001, LumiSection 1 at 16-Jul-2014 23:37:20.598 CEST
+Begin processing the 30001st record. Run 1, Event 30001, LumiSection 1 at 16-Jul-2014 23:38:02.921 CEST
+Begin processing the 31001st record. Run 1, Event 31001, LumiSection 1 at 16-Jul-2014 23:38:51.012 CEST
+Begin processing the 32001st record. Run 1, Event 32001, LumiSection 1 at 16-Jul-2014 23:39:34.771 CEST
+Begin processing the 33001st record. Run 1, Event 33001, LumiSection 1 at 16-Jul-2014 23:40:17.258 CEST
+Begin processing the 34001st record. Run 1, Event 34001, LumiSection 1 at 16-Jul-2014 23:41:03.245 CEST
+Begin processing the 35001st record. Run 1, Event 35001, LumiSection 1 at 16-Jul-2014 23:41:46.027 CEST
+Begin processing the 36001st record. Run 1, Event 36001, LumiSection 1 at 16-Jul-2014 23:42:28.538 CEST
+Begin processing the 37001st record. Run 1, Event 37001, LumiSection 1 at 16-Jul-2014 23:43:09.869 CEST
+Begin processing the 38001st record. Run 1, Event 38001, LumiSection 1 at 16-Jul-2014 23:43:52.417 CEST
+Begin processing the 39001st record. Run 1, Event 39001, LumiSection 1 at 16-Jul-2014 23:44:37.733 CEST
+Begin processing the 40001st record. Run 1, Event 40001, LumiSection 1 at 16-Jul-2014 23:45:18.667 CEST
+Begin processing the 41001st record. Run 1, Event 41001, LumiSection 1 at 16-Jul-2014 23:46:01.755 CEST
+Begin processing the 42001st record. Run 1, Event 42001, LumiSection 1 at 16-Jul-2014 23:46:40.147 CEST
+Begin processing the 43001st record. Run 1, Event 43001, LumiSection 1 at 16-Jul-2014 23:47:18.318 CEST
+Begin processing the 44001st record. Run 1, Event 44001, LumiSection 1 at 16-Jul-2014 23:47:54.654 CEST
+Begin processing the 45001st record. Run 1, Event 45001, LumiSection 1 at 16-Jul-2014 23:48:31.296 CEST
+Begin processing the 46001st record. Run 1, Event 46001, LumiSection 1 at 16-Jul-2014 23:49:09.087 CEST
+Begin processing the 47001st record. Run 1, Event 47001, LumiSection 1 at 16-Jul-2014 23:49:44.725 CEST
+Begin processing the 48001st record. Run 1, Event 48001, LumiSection 1 at 16-Jul-2014 23:50:19.369 CEST
+Begin processing the 49001st record. Run 1, Event 49001, LumiSection 1 at 16-Jul-2014 23:50:54.966 CEST
+Begin processing the 50001st record. Run 1, Event 50001, LumiSection 1 at 16-Jul-2014 23:51:31.820 CEST
+Begin processing the 51001st record. Run 1, Event 51001, LumiSection 1 at 16-Jul-2014 23:52:07.175 CEST
+Begin processing the 52001st record. Run 1, Event 52001, LumiSection 1 at 16-Jul-2014 23:52:46.178 CEST
+Begin processing the 53001st record. Run 1, Event 53001, LumiSection 1 at 16-Jul-2014 23:53:25.970 CEST
+Begin processing the 54001st record. Run 1, Event 54001, LumiSection 1 at 16-Jul-2014 23:54:02.828 CEST
+Begin processing the 55001st record. Run 1, Event 55001, LumiSection 1 at 16-Jul-2014 23:54:40.852 CEST
+Begin processing the 56001st record. Run 1, Event 56001, LumiSection 1 at 16-Jul-2014 23:55:19.126 CEST
+Begin processing the 57001st record. Run 1, Event 57001, LumiSection 1 at 16-Jul-2014 23:56:01.144 CEST
+Begin processing the 58001st record. Run 1, Event 58001, LumiSection 1 at 16-Jul-2014 23:56:49.221 CEST
+Begin processing the 59001st record. Run 1, Event 59001, LumiSection 1 at 16-Jul-2014 23:57:36.719 CEST
+Begin processing the 60001st record. Run 1, Event 60001, LumiSection 1 at 16-Jul-2014 23:58:26.490 CEST
+Begin processing the 61001st record. Run 1, Event 61001, LumiSection 1 at 16-Jul-2014 23:59:13.748 CEST
+Begin processing the 62001st record. Run 1, Event 62001, LumiSection 1 at 17-Jul-2014 00:00:02.396 CEST
+Begin processing the 63001st record. Run 1, Event 63001, LumiSection 1 at 17-Jul-2014 00:00:51.661 CEST
+Begin processing the 64001st record. Run 1, Event 64001, LumiSection 1 at 17-Jul-2014 00:01:40.569 CEST
+Begin processing the 65001st record. Run 1, Event 65001, LumiSection 1 at 17-Jul-2014 00:02:25.108 CEST
+Begin processing the 66001st record. Run 1, Event 66001, LumiSection 1 at 17-Jul-2014 00:03:10.185 CEST
+Begin processing the 67001st record. Run 1, Event 67001, LumiSection 1 at 17-Jul-2014 00:03:57.300 CEST
+Begin processing the 68001st record. Run 1, Event 68001, LumiSection 1 at 17-Jul-2014 00:04:46.539 CEST
+Begin processing the 69001st record. Run 1, Event 69001, LumiSection 1 at 17-Jul-2014 00:05:32.484 CEST
+Begin processing the 70001st record. Run 1, Event 70001, LumiSection 1 at 17-Jul-2014 00:06:15.927 CEST
+Begin processing the 71001st record. Run 1, Event 71001, LumiSection 1 at 17-Jul-2014 00:07:02.800 CEST
+Begin processing the 72001st record. Run 1, Event 72001, LumiSection 1 at 17-Jul-2014 00:07:51.746 CEST
+Begin processing the 73001st record. Run 1, Event 73001, LumiSection 1 at 17-Jul-2014 00:08:40.083 CEST
+Begin processing the 74001st record. Run 1, Event 74001, LumiSection 1 at 17-Jul-2014 00:09:27.500 CEST
+Begin processing the 75001st record. Run 1, Event 75001, LumiSection 1 at 17-Jul-2014 00:10:17.337 CEST
+Begin processing the 76001st record. Run 1, Event 76001, LumiSection 1 at 17-Jul-2014 00:11:01.170 CEST
+Begin processing the 77001st record. Run 1, Event 77001, LumiSection 1 at 17-Jul-2014 00:11:43.883 CEST
+Begin processing the 78001st record. Run 1, Event 78001, LumiSection 1 at 17-Jul-2014 00:12:31.697 CEST
+Begin processing the 79001st record. Run 1, Event 79001, LumiSection 1 at 17-Jul-2014 00:13:19.866 CEST
+Begin processing the 80001st record. Run 1, Event 80001, LumiSection 1 at 17-Jul-2014 00:14:07.343 CEST
+Begin processing the 81001st record. Run 1, Event 81001, LumiSection 1 at 17-Jul-2014 00:14:49.804 CEST
+Begin processing the 82001st record. Run 1, Event 82001, LumiSection 1 at 17-Jul-2014 00:15:40.134 CEST
+Begin processing the 83001st record. Run 1, Event 83001, LumiSection 1 at 17-Jul-2014 00:16:25.526 CEST
+Begin processing the 84001st record. Run 1, Event 84001, LumiSection 1 at 17-Jul-2014 00:17:16.038 CEST
+Begin processing the 85001st record. Run 1, Event 85001, LumiSection 1 at 17-Jul-2014 00:18:06.594 CEST
+Begin processing the 86001st record. Run 1, Event 86001, LumiSection 1 at 17-Jul-2014 00:18:57.813 CEST
+Begin processing the 87001st record. Run 1, Event 87001, LumiSection 1 at 17-Jul-2014 00:19:46.243 CEST
+Begin processing the 88001st record. Run 1, Event 88001, LumiSection 1 at 17-Jul-2014 00:20:31.680 CEST
+Begin processing the 89001st record. Run 1, Event 89001, LumiSection 1 at 17-Jul-2014 00:21:17.086 CEST
+Begin processing the 90001st record. Run 1, Event 90001, LumiSection 1 at 17-Jul-2014 00:22:05.168 CEST
+Begin processing the 91001st record. Run 1, Event 91001, LumiSection 1 at 17-Jul-2014 00:22:51.802 CEST
+Begin processing the 92001st record. Run 1, Event 92001, LumiSection 1 at 17-Jul-2014 00:23:38.226 CEST
+Begin processing the 93001st record. Run 1, Event 93001, LumiSection 1 at 17-Jul-2014 00:24:19.556 CEST
+Begin processing the 94001st record. Run 1, Event 94001, LumiSection 1 at 17-Jul-2014 00:25:03.703 CEST
+Begin processing the 95001st record. Run 1, Event 95001, LumiSection 1 at 17-Jul-2014 00:25:50.554 CEST
+Begin processing the 96001st record. Run 1, Event 96001, LumiSection 1 at 17-Jul-2014 00:26:38.313 CEST
+Begin processing the 97001st record. Run 1, Event 97001, LumiSection 1 at 17-Jul-2014 00:27:25.534 CEST
+Begin processing the 98001st record. Run 1, Event 98001, LumiSection 1 at 17-Jul-2014 00:28:13.019 CEST
+Begin processing the 99001st record. Run 1, Event 99001, LumiSection 1 at 17-Jul-2014 00:29:00.052 CEST
+
+TrigReport ---------- Event  Summary ------------
+TrigReport Events total = 100000 passed = 100000 failed = 0
+
+TrigReport ---------- Path   Summary ------------
+TrigReport  Trig Bit#        Run     Passed     Failed      Error Name
+TrigReport     1    0     100000     100000          0          0 gen_step
+TrigReport     1    1     100000     100000          0          0 genjet_step
+TrigReport     1    2     100000     100000          0          0 ana_step
+
+TrigReport -------End-Path   Summary ------------
+TrigReport  Trig Bit#        Run     Passed     Failed      Error Name
+
+TrigReport ---------- Modules in Path: gen_step ------------
+TrigReport  Trig Bit#    Visited     Passed     Failed      Error Name
+TrigReport     1    0     100000     100000          0          0 generator
+TrigReport     1    0     100000     100000          0          0 genParticles
+
+TrigReport ---------- Modules in Path: genjet_step ------------
+TrigReport  Trig Bit#    Visited     Passed     Failed      Error Name
+TrigReport     1    1     100000     100000          0          0 genParticlesForJets
+TrigReport     1    1     100000     100000          0          0 ak2GenJets
+TrigReport     1    1     100000     100000          0          0 ak3GenJets
+TrigReport     1    1     100000     100000          0          0 ak4GenJets
+TrigReport     1    1     100000     100000          0          0 ak5GenJets
+TrigReport     1    1     100000     100000          0          0 ak7GenJets
+
+TrigReport ---------- Modules in Path: ana_step ------------
+TrigReport  Trig Bit#    Visited     Passed     Failed      Error Name
+TrigReport     1    2     100000     100000          0          0 ak3GenJetSpectrum_n10_p10
+TrigReport     1    2     100000     100000          0          0 ak3GenJetSpectrum_n20_p20
+TrigReport     1    2     100000     100000          0          0 ak3GenJetSpectrum_n25_n20
+TrigReport     1    2     100000     100000          0          0 ak3GenJetSpectrum_n20_n15
+TrigReport     1    2     100000     100000          0          0 ak3GenJetSpectrum_n15_n10
+TrigReport     1    2     100000     100000          0          0 ak3GenJetSpectrum_n10_n05
+TrigReport     1    2     100000     100000          0          0 ak3GenJetSpectrum_n05_p05
+TrigReport     1    2     100000     100000          0          0 ak3GenJetSpectrum_p05_p10
+TrigReport     1    2     100000     100000          0          0 ak3GenJetSpectrum_p10_p15
+TrigReport     1    2     100000     100000          0          0 ak3GenJetSpectrum_p15_p20
+TrigReport     1    2     100000     100000          0          0 ak2GenJetSpectrum_n10_p10
+TrigReport     1    2     100000     100000          0          0 ak2GenJetSpectrum_n20_p20
+TrigReport     1    2     100000     100000          0          0 ak2GenJetSpectrum_n25_n20
+TrigReport     1    2     100000     100000          0          0 ak2GenJetSpectrum_n20_n15
+TrigReport     1    2     100000     100000          0          0 ak2GenJetSpectrum_n15_n10
+TrigReport     1    2     100000     100000          0          0 ak2GenJetSpectrum_n10_n05
+TrigReport     1    2     100000     100000          0          0 ak2GenJetSpectrum_n05_p05
+TrigReport     1    2     100000     100000          0          0 ak2GenJetSpectrum_p05_p10
+TrigReport     1    2     100000     100000          0          0 ak2GenJetSpectrum_p10_p15
+TrigReport     1    2     100000     100000          0          0 ak2GenJetSpectrum_p15_p20
+TrigReport     1    2     100000     100000          0          0 ak4GenJetSpectrum_n10_p10
+TrigReport     1    2     100000     100000          0          0 ak4GenJetSpectrum_n20_p20
+TrigReport     1    2     100000     100000          0          0 ak4GenJetSpectrum_n25_n20
+TrigReport     1    2     100000     100000          0          0 ak4GenJetSpectrum_n20_n15
+TrigReport     1    2     100000     100000          0          0 ak4GenJetSpectrum_n15_n10
+TrigReport     1    2     100000     100000          0          0 ak4GenJetSpectrum_n10_n05
+TrigReport     1    2     100000     100000          0          0 ak4GenJetSpectrum_n05_p05
+TrigReport     1    2     100000     100000          0          0 ak4GenJetSpectrum_p05_p10
+TrigReport     1    2     100000     100000          0          0 ak4GenJetSpectrum_p10_p15
+TrigReport     1    2     100000     100000          0          0 ak4GenJetSpectrum_p15_p20
+TrigReport     1    2     100000     100000          0          0 ak5GenJetSpectrum_n10_p10
+TrigReport     1    2     100000     100000          0          0 ak5GenJetSpectrum_n20_p20
+TrigReport     1    2     100000     100000          0          0 ak5GenJetSpectrum_n25_n20
+TrigReport     1    2     100000     100000          0          0 ak5GenJetSpectrum_n20_n15
+TrigReport     1    2     100000     100000          0          0 ak5GenJetSpectrum_n15_n10
+TrigReport     1    2     100000     100000          0          0 ak5GenJetSpectrum_n10_n05
+TrigReport     1    2     100000     100000          0          0 ak5GenJetSpectrum_n05_p05
+TrigReport     1    2     100000     100000          0          0 ak5GenJetSpectrum_p05_p10
+TrigReport     1    2     100000     100000          0          0 ak5GenJetSpectrum_p10_p15
+TrigReport     1    2     100000     100000          0          0 ak5GenJetSpectrum_p15_p20
+TrigReport     1    2     100000     100000          0          0 ak7GenJetSpectrum_n10_p10
+TrigReport     1    2     100000     100000          0          0 ak7GenJetSpectrum_n20_p20
+TrigReport     1    2     100000     100000          0          0 ak7GenJetSpectrum_n25_n20
+TrigReport     1    2     100000     100000          0          0 ak7GenJetSpectrum_n20_n15
+TrigReport     1    2     100000     100000          0          0 ak7GenJetSpectrum_n15_n10
+TrigReport     1    2     100000     100000          0          0 ak7GenJetSpectrum_n10_n05
+TrigReport     1    2     100000     100000          0          0 ak7GenJetSpectrum_n05_p05
+TrigReport     1    2     100000     100000          0          0 ak7GenJetSpectrum_p05_p10
+TrigReport     1    2     100000     100000          0          0 ak7GenJetSpectrum_p10_p15
+TrigReport     1    2     100000     100000          0          0 ak7GenJetSpectrum_p15_p20
+
+TrigReport ---------- Module Summary ------------
+TrigReport    Visited        Run     Passed     Failed      Error Name
+TrigReport     100000     100000     100000          0          0 generator
+TrigReport     100000     100000     100000          0          0 genParticles
+TrigReport     100000     100000     100000          0          0 genParticlesForJets
+TrigReport     100000     100000     100000          0          0 ak2GenJets
+TrigReport     100000     100000     100000          0          0 ak3GenJets
+TrigReport     100000     100000     100000          0          0 ak4GenJets
+TrigReport     100000     100000     100000          0          0 ak5GenJets
+TrigReport     100000     100000     100000          0          0 ak7GenJets
+TrigReport     100000     100000     100000          0          0 ak3GenJetSpectrum_n10_p10
+TrigReport     100000     100000     100000          0          0 ak3GenJetSpectrum_n20_p20
+TrigReport     100000     100000     100000          0          0 ak3GenJetSpectrum_n25_n20
+TrigReport     100000     100000     100000          0          0 ak3GenJetSpectrum_n20_n15
+TrigReport     100000     100000     100000          0          0 ak3GenJetSpectrum_n15_n10
+TrigReport     100000     100000     100000          0          0 ak3GenJetSpectrum_n10_n05
+TrigReport     100000     100000     100000          0          0 ak3GenJetSpectrum_n05_p05
+TrigReport     100000     100000     100000          0          0 ak3GenJetSpectrum_p05_p10
+TrigReport     100000     100000     100000          0          0 ak3GenJetSpectrum_p10_p15
+TrigReport     100000     100000     100000          0          0 ak3GenJetSpectrum_p15_p20
+TrigReport     100000     100000     100000          0          0 ak2GenJetSpectrum_n10_p10
+TrigReport     100000     100000     100000          0          0 ak2GenJetSpectrum_n20_p20
+TrigReport     100000     100000     100000          0          0 ak2GenJetSpectrum_n25_n20
+TrigReport     100000     100000     100000          0          0 ak2GenJetSpectrum_n20_n15
+TrigReport     100000     100000     100000          0          0 ak2GenJetSpectrum_n15_n10
+TrigReport     100000     100000     100000          0          0 ak2GenJetSpectrum_n10_n05
+TrigReport     100000     100000     100000          0          0 ak2GenJetSpectrum_n05_p05
+TrigReport     100000     100000     100000          0          0 ak2GenJetSpectrum_p05_p10
+TrigReport     100000     100000     100000          0          0 ak2GenJetSpectrum_p10_p15
+TrigReport     100000     100000     100000          0          0 ak2GenJetSpectrum_p15_p20
+TrigReport     100000     100000     100000          0          0 ak4GenJetSpectrum_n10_p10
+TrigReport     100000     100000     100000          0          0 ak4GenJetSpectrum_n20_p20
+TrigReport     100000     100000     100000          0          0 ak4GenJetSpectrum_n25_n20
+TrigReport     100000     100000     100000          0          0 ak4GenJetSpectrum_n20_n15
+TrigReport     100000     100000     100000          0          0 ak4GenJetSpectrum_n15_n10
+TrigReport     100000     100000     100000          0          0 ak4GenJetSpectrum_n10_n05
+TrigReport     100000     100000     100000          0          0 ak4GenJetSpectrum_n05_p05
+TrigReport     100000     100000     100000          0          0 ak4GenJetSpectrum_p05_p10
+TrigReport     100000     100000     100000          0          0 ak4GenJetSpectrum_p10_p15
+TrigReport     100000     100000     100000          0          0 ak4GenJetSpectrum_p15_p20
+TrigReport     100000     100000     100000          0          0 ak5GenJetSpectrum_n10_p10
+TrigReport     100000     100000     100000          0          0 ak5GenJetSpectrum_n20_p20
+TrigReport     100000     100000     100000          0          0 ak5GenJetSpectrum_n25_n20
+TrigReport     100000     100000     100000          0          0 ak5GenJetSpectrum_n20_n15
+TrigReport     100000     100000     100000          0          0 ak5GenJetSpectrum_n15_n10
+TrigReport     100000     100000     100000          0          0 ak5GenJetSpectrum_n10_n05
+TrigReport     100000     100000     100000          0          0 ak5GenJetSpectrum_n05_p05
+TrigReport     100000     100000     100000          0          0 ak5GenJetSpectrum_p05_p10
+TrigReport     100000     100000     100000          0          0 ak5GenJetSpectrum_p10_p15
+TrigReport     100000     100000     100000          0          0 ak5GenJetSpectrum_p15_p20
+TrigReport     100000     100000     100000          0          0 ak7GenJetSpectrum_n10_p10
+TrigReport     100000     100000     100000          0          0 ak7GenJetSpectrum_n20_p20
+TrigReport     100000     100000     100000          0          0 ak7GenJetSpectrum_n25_n20
+TrigReport     100000     100000     100000          0          0 ak7GenJetSpectrum_n20_n15
+TrigReport     100000     100000     100000          0          0 ak7GenJetSpectrum_n15_n10
+TrigReport     100000     100000     100000          0          0 ak7GenJetSpectrum_n10_n05
+TrigReport     100000     100000     100000          0          0 ak7GenJetSpectrum_n05_p05
+TrigReport     100000     100000     100000          0          0 ak7GenJetSpectrum_p05_p10
+TrigReport     100000     100000     100000          0          0 ak7GenJetSpectrum_p10_p15
+TrigReport     100000     100000     100000          0          0 ak7GenJetSpectrum_p15_p20
+TrigReport     100000     100000     100000          0          0 TriggerResults
+
+TimeReport ---------- Event  Summary ---[sec]----
+TimeReport CPU/event = 0.043167 Real/event = 0.043672
+
+TimeReport ---------- Path   Summary ---[sec]----
+TimeReport             per event          per path-run 
+TimeReport        CPU       Real        CPU       Real Name
+TimeReport   0.014510   0.014674   0.014510   0.014674 gen_step
+TimeReport   0.007297   0.007389   0.007297   0.007389 genjet_step
+TimeReport   0.021290   0.021540   0.021290   0.021540 ana_step
+TimeReport        CPU       Real        CPU       Real Name
+TimeReport             per event          per path-run 
+
+TimeReport -------End-Path   Summary ---[sec]----
+TimeReport             per event       per endpath-run 
+TimeReport        CPU       Real        CPU       Real Name
+TimeReport        CPU       Real        CPU       Real Name
+TimeReport             per event       per endpath-run 
+
+TimeReport ---------- Modules in Path: gen_step ---[sec]----
+TimeReport             per event      per module-visit 
+TimeReport        CPU       Real        CPU       Real Name
+TimeReport   0.013893   0.014057   0.013893   0.014057 generator
+TimeReport   0.000609   0.000612   0.000609   0.000612 genParticles
+
+TimeReport ---------- Modules in Path: genjet_step ---[sec]----
+TimeReport             per event      per module-visit 
+TimeReport        CPU       Real        CPU       Real Name
+TimeReport   0.001640   0.001661   0.001640   0.001661 genParticlesForJets
+TimeReport   0.001205   0.001224   0.001205   0.001224 ak2GenJets
+TimeReport   0.001079   0.001091   0.001079   0.001091 ak3GenJets
+TimeReport   0.001080   0.001097   0.001080   0.001097 ak4GenJets
+TimeReport   0.001104   0.001119   0.001104   0.001119 ak5GenJets
+TimeReport   0.001171   0.001186   0.001171   0.001186 ak7GenJets
+
+TimeReport ---------- Modules in Path: ana_step ---[sec]----
+TimeReport             per event      per module-visit 
+TimeReport        CPU       Real        CPU       Real Name
+TimeReport   0.000461   0.000469   0.000461   0.000469 ak3GenJetSpectrum_n10_p10
+TimeReport   0.000428   0.000434   0.000428   0.000434 ak3GenJetSpectrum_n20_p20
+TimeReport   0.000421   0.000428   0.000421   0.000428 ak3GenJetSpectrum_n25_n20
+TimeReport   0.000423   0.000429   0.000423   0.000429 ak3GenJetSpectrum_n20_n15
+TimeReport   0.000421   0.000428   0.000421   0.000428 ak3GenJetSpectrum_n15_n10
+TimeReport   0.000425   0.000429   0.000425   0.000429 ak3GenJetSpectrum_n10_n05
+TimeReport   0.000422   0.000430   0.000422   0.000430 ak3GenJetSpectrum_n05_p05
+TimeReport   0.000423   0.000427   0.000423   0.000427 ak3GenJetSpectrum_p05_p10
+TimeReport   0.000422   0.000427   0.000422   0.000427 ak3GenJetSpectrum_p10_p15
+TimeReport   0.000421   0.000428   0.000421   0.000428 ak3GenJetSpectrum_p15_p20
+TimeReport   0.000427   0.000432   0.000427   0.000432 ak2GenJetSpectrum_n10_p10
+TimeReport   0.000429   0.000434   0.000429   0.000434 ak2GenJetSpectrum_n20_p20
+TimeReport   0.000420   0.000428   0.000420   0.000428 ak2GenJetSpectrum_n25_n20
+TimeReport   0.000421   0.000426   0.000421   0.000426 ak2GenJetSpectrum_n20_n15
+TimeReport   0.000424   0.000428   0.000424   0.000428 ak2GenJetSpectrum_n15_n10
+TimeReport   0.000422   0.000428   0.000422   0.000428 ak2GenJetSpectrum_n10_n05
+TimeReport   0.000423   0.000430   0.000423   0.000430 ak2GenJetSpectrum_n05_p05
+TimeReport   0.000423   0.000429   0.000423   0.000429 ak2GenJetSpectrum_p05_p10
+TimeReport   0.000423   0.000428   0.000423   0.000428 ak2GenJetSpectrum_p10_p15
+TimeReport   0.000421   0.000427   0.000421   0.000427 ak2GenJetSpectrum_p15_p20
+TimeReport   0.000425   0.000431   0.000425   0.000431 ak4GenJetSpectrum_n10_p10
+TimeReport   0.000427   0.000432   0.000427   0.000432 ak4GenJetSpectrum_n20_p20
+TimeReport   0.000421   0.000428   0.000421   0.000428 ak4GenJetSpectrum_n25_n20
+TimeReport   0.000421   0.000428   0.000421   0.000428 ak4GenJetSpectrum_n20_n15
+TimeReport   0.000424   0.000428   0.000424   0.000428 ak4GenJetSpectrum_n15_n10
+TimeReport   0.000421   0.000428   0.000421   0.000428 ak4GenJetSpectrum_n10_n05
+TimeReport   0.000422   0.000430   0.000422   0.000430 ak4GenJetSpectrum_n05_p05
+TimeReport   0.000424   0.000428   0.000424   0.000428 ak4GenJetSpectrum_p05_p10
+TimeReport   0.000420   0.000430   0.000420   0.000430 ak4GenJetSpectrum_p10_p15
+TimeReport   0.000423   0.000427   0.000423   0.000427 ak4GenJetSpectrum_p15_p20
+TimeReport   0.000427   0.000432   0.000427   0.000432 ak5GenJetSpectrum_n10_p10
+TimeReport   0.000426   0.000432   0.000426   0.000432 ak5GenJetSpectrum_n20_p20
+TimeReport   0.000419   0.000427   0.000419   0.000427 ak5GenJetSpectrum_n25_n20
+TimeReport   0.000425   0.000428   0.000425   0.000428 ak5GenJetSpectrum_n20_n15
+TimeReport   0.000420   0.000428   0.000420   0.000428 ak5GenJetSpectrum_n15_n10
+TimeReport   0.000423   0.000427   0.000423   0.000427 ak5GenJetSpectrum_n10_n05
+TimeReport   0.000423   0.000429   0.000423   0.000429 ak5GenJetSpectrum_n05_p05
+TimeReport   0.000424   0.000428   0.000424   0.000428 ak5GenJetSpectrum_p05_p10
+TimeReport   0.000421   0.000428   0.000421   0.000428 ak5GenJetSpectrum_p10_p15
+TimeReport   0.000423   0.000428   0.000423   0.000428 ak5GenJetSpectrum_p15_p20
+TimeReport   0.000427   0.000431   0.000427   0.000431 ak7GenJetSpectrum_n10_p10
+TimeReport   0.000425   0.000432   0.000425   0.000432 ak7GenJetSpectrum_n20_p20
+TimeReport   0.000420   0.000427   0.000420   0.000427 ak7GenJetSpectrum_n25_n20
+TimeReport   0.000426   0.000427   0.000426   0.000427 ak7GenJetSpectrum_n20_n15
+TimeReport   0.000420   0.000428   0.000420   0.000428 ak7GenJetSpectrum_n15_n10
+TimeReport   0.000422   0.000429   0.000422   0.000429 ak7GenJetSpectrum_n10_n05
+TimeReport   0.000424   0.000428   0.000424   0.000428 ak7GenJetSpectrum_n05_p05
+TimeReport   0.000421   0.000428   0.000421   0.000428 ak7GenJetSpectrum_p05_p10
+TimeReport   0.000424   0.000428   0.000424   0.000428 ak7GenJetSpectrum_p10_p15
+TimeReport   0.000420   0.000427   0.000420   0.000427 ak7GenJetSpectrum_p15_p20
+TimeReport        CPU       Real        CPU       Real Name
+TimeReport             per event      per module-visit 
+TimeReport        CPU       Real        CPU       Real Name
+TimeReport             per event      per module-visit 
+
+TimeReport ---------- Module Summary ---[sec]----
+TimeReport             per event        per module-run      per module-visit 
+TimeReport        CPU       Real        CPU       Real        CPU       Real Name
+TimeReport   0.013893   0.014057   0.013893   0.014057   0.013893   0.014057 generator
+TimeReport   0.000609   0.000612   0.000609   0.000612   0.000609   0.000612 genParticles
+TimeReport   0.001640   0.001661   0.001640   0.001661   0.001640   0.001661 genParticlesForJets
+TimeReport   0.001205   0.001224   0.001205   0.001224   0.001205   0.001224 ak2GenJets
+TimeReport   0.001079   0.001091   0.001079   0.001091   0.001079   0.001091 ak3GenJets
+TimeReport   0.001080   0.001097   0.001080   0.001097   0.001080   0.001097 ak4GenJets
+TimeReport   0.001104   0.001119   0.001104   0.001119   0.001104   0.001119 ak5GenJets
+TimeReport   0.001171   0.001186   0.001171   0.001186   0.001171   0.001186 ak7GenJets
+TimeReport   0.000461   0.000469   0.000461   0.000469   0.000461   0.000469 ak3GenJetSpectrum_n10_p10
+TimeReport   0.000428   0.000434   0.000428   0.000434   0.000428   0.000434 ak3GenJetSpectrum_n20_p20
+TimeReport   0.000421   0.000428   0.000421   0.000428   0.000421   0.000428 ak3GenJetSpectrum_n25_n20
+TimeReport   0.000423   0.000429   0.000423   0.000429   0.000423   0.000429 ak3GenJetSpectrum_n20_n15
+TimeReport   0.000421   0.000428   0.000421   0.000428   0.000421   0.000428 ak3GenJetSpectrum_n15_n10
+TimeReport   0.000425   0.000429   0.000425   0.000429   0.000425   0.000429 ak3GenJetSpectrum_n10_n05
+TimeReport   0.000422   0.000430   0.000422   0.000430   0.000422   0.000430 ak3GenJetSpectrum_n05_p05
+TimeReport   0.000423   0.000427   0.000423   0.000427   0.000423   0.000427 ak3GenJetSpectrum_p05_p10
+TimeReport   0.000422   0.000427   0.000422   0.000427   0.000422   0.000427 ak3GenJetSpectrum_p10_p15
+TimeReport   0.000421   0.000428   0.000421   0.000428   0.000421   0.000428 ak3GenJetSpectrum_p15_p20
+TimeReport   0.000427   0.000432   0.000427   0.000432   0.000427   0.000432 ak2GenJetSpectrum_n10_p10
+TimeReport   0.000429   0.000434   0.000429   0.000434   0.000429   0.000434 ak2GenJetSpectrum_n20_p20
+TimeReport   0.000420   0.000428   0.000420   0.000428   0.000420   0.000428 ak2GenJetSpectrum_n25_n20
+TimeReport   0.000421   0.000426   0.000421   0.000426   0.000421   0.000426 ak2GenJetSpectrum_n20_n15
+TimeReport   0.000424   0.000428   0.000424   0.000428   0.000424   0.000428 ak2GenJetSpectrum_n15_n10
+TimeReport   0.000422   0.000428   0.000422   0.000428   0.000422   0.000428 ak2GenJetSpectrum_n10_n05
+TimeReport   0.000423   0.000430   0.000423   0.000430   0.000423   0.000430 ak2GenJetSpectrum_n05_p05
+TimeReport   0.000423   0.000429   0.000423   0.000429   0.000423   0.000429 ak2GenJetSpectrum_p05_p10
+TimeReport   0.000423   0.000428   0.000423   0.000428   0.000423   0.000428 ak2GenJetSpectrum_p10_p15
+TimeReport   0.000421   0.000427   0.000421   0.000427   0.000421   0.000427 ak2GenJetSpectrum_p15_p20
+TimeReport   0.000425   0.000431   0.000425   0.000431   0.000425   0.000431 ak4GenJetSpectrum_n10_p10
+TimeReport   0.000427   0.000432   0.000427   0.000432   0.000427   0.000432 ak4GenJetSpectrum_n20_p20
+TimeReport   0.000421   0.000428   0.000421   0.000428   0.000421   0.000428 ak4GenJetSpectrum_n25_n20
+TimeReport   0.000421   0.000428   0.000421   0.000428   0.000421   0.000428 ak4GenJetSpectrum_n20_n15
+TimeReport   0.000424   0.000428   0.000424   0.000428   0.000424   0.000428 ak4GenJetSpectrum_n15_n10
+TimeReport   0.000421   0.000428   0.000421   0.000428   0.000421   0.000428 ak4GenJetSpectrum_n10_n05
+TimeReport   0.000422   0.000430   0.000422   0.000430   0.000422   0.000430 ak4GenJetSpectrum_n05_p05
+TimeReport   0.000424   0.000428   0.000424   0.000428   0.000424   0.000428 ak4GenJetSpectrum_p05_p10
+TimeReport   0.000420   0.000430   0.000420   0.000430   0.000420   0.000430 ak4GenJetSpectrum_p10_p15
+TimeReport   0.000423   0.000427   0.000423   0.000427   0.000423   0.000427 ak4GenJetSpectrum_p15_p20
+TimeReport   0.000427   0.000432   0.000427   0.000432   0.000427   0.000432 ak5GenJetSpectrum_n10_p10
+TimeReport   0.000426   0.000432   0.000426   0.000432   0.000426   0.000432 ak5GenJetSpectrum_n20_p20
+TimeReport   0.000419   0.000427   0.000419   0.000427   0.000419   0.000427 ak5GenJetSpectrum_n25_n20
+TimeReport   0.000425   0.000428   0.000425   0.000428   0.000425   0.000428 ak5GenJetSpectrum_n20_n15
+TimeReport   0.000420   0.000428   0.000420   0.000428   0.000420   0.000428 ak5GenJetSpectrum_n15_n10
+TimeReport   0.000423   0.000427   0.000423   0.000427   0.000423   0.000427 ak5GenJetSpectrum_n10_n05
+TimeReport   0.000423   0.000429   0.000423   0.000429   0.000423   0.000429 ak5GenJetSpectrum_n05_p05
+TimeReport   0.000424   0.000428   0.000424   0.000428   0.000424   0.000428 ak5GenJetSpectrum_p05_p10
+TimeReport   0.000421   0.000428   0.000421   0.000428   0.000421   0.000428 ak5GenJetSpectrum_p10_p15
+TimeReport   0.000423   0.000428   0.000423   0.000428   0.000423   0.000428 ak5GenJetSpectrum_p15_p20
+TimeReport   0.000427   0.000431   0.000427   0.000431   0.000427   0.000431 ak7GenJetSpectrum_n10_p10
+TimeReport   0.000425   0.000432   0.000425   0.000432   0.000425   0.000432 ak7GenJetSpectrum_n20_p20
+TimeReport   0.000420   0.000427   0.000420   0.000427   0.000420   0.000427 ak7GenJetSpectrum_n25_n20
+TimeReport   0.000426   0.000427   0.000426   0.000427   0.000426   0.000427 ak7GenJetSpectrum_n20_n15
+TimeReport   0.000420   0.000428   0.000420   0.000428   0.000420   0.000428 ak7GenJetSpectrum_n15_n10
+TimeReport   0.000422   0.000429   0.000422   0.000429   0.000422   0.000429 ak7GenJetSpectrum_n10_n05
+TimeReport   0.000424   0.000428   0.000424   0.000428   0.000424   0.000428 ak7GenJetSpectrum_n05_p05
+TimeReport   0.000421   0.000428   0.000421   0.000428   0.000421   0.000428 ak7GenJetSpectrum_p05_p10
+TimeReport   0.000424   0.000428   0.000424   0.000428   0.000424   0.000428 ak7GenJetSpectrum_p10_p15
+TimeReport   0.000420   0.000427   0.000420   0.000427   0.000420   0.000427 ak7GenJetSpectrum_p15_p20
+TimeReport   0.000054   0.000055   0.000054   0.000055   0.000054   0.000055 TriggerResults
+TimeReport        CPU       Real        CPU       Real        CPU       Real Name
+TimeReport             per event        per module-run      per module-visit 
+
+T---Report end!
+
+
+=============================================
+
+MessageLogger Summary
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+     MSTU(12)       changed from              0 to          12345
+1****************** PYINIT: initialization of PYTHIA routines *****************
+ ==== PYTHIA WILL USE LHAPDF ====
+ *************************************
+ *       LHAPDF Version 5.8.5        *
+ *   Configured for the following:   *
+ *             All PDFs              *
+ *          LOW MEMORY option        *
+ *    Maximum  1 concurrent set(s)   *
+ *************************************
+
+ >>>>>> PDF description: <<<<<<
+ CTEQ6L1 - LO with LO alpha_s                                    
+ Reference:                                                      
+ J. Pumplin, D.R. Stump, J. Huston, H.L. Lai, P. Nadolsky,       
+ W.K. Tung                                                       
+ hep-ph/0201195                                                  
+ >>>>>>                   <<<<<<
+
+ Parametrization: CTEQ6           
+
+ ==============================================
+ PDFset name /cvmfs/cms.cern.ch/slc5_amd64_gcc462/external/lhapdf/5.8.5-cms2/share/lhapdf/PDF
+ with          1 members
+ ====  initialized. ===========================
+ Strong coupling at Mz for PDF is:  0.12978
+
+ ==============================================================================
+ I                                                                            I
+ I              PYTHIA will be initialized for a p on p collider              I
+ I                  at   2760.000 GeV center-of-mass energy                   I
+ I                                                                            I
+ ==============================================================================
+
+ ******** PYMAXI: summary of differential cross-section maximum search ********
+
+           ==========================================================
+           I                                      I                 I
+           I  ISUB  Subprocess name               I  Maximum value  I
+           I                                      I                 I
+           ==========================================================
+           I                                      I                 I
+           I   11   f + f' -> f + f' (QCD)        I    7.0959D-05   I
+           I   12   f + fbar -> f' + fbar'        I    1.0025D-06   I
+           I   13   f + fbar -> g + g             I    7.9329D-07   I
+           I   28   f + g -> f + g                I    2.5424D-04   I
+           I   53   g + g -> f + fbar             I    4.6004D-06   I
+           I   68   g + g -> g + g                I    1.2036D-04   I
+           I   96   Semihard QCD 2 -> 2           I    5.7287D+03   I
+           I                                      I                 I
+           ==========================================================
+
+ ****** PYMULT: initialization of multiple interactions for MSTP(82) = 4 ******
+        pT0 = 2.06 GeV gives sigma(parton-parton) = 3.29D+02 mb: accepted
+
+ ****** PYMIGN: initialization of multiple interactions for MSTP(82) = 4 ******
+        pT0 = 2.06 GeV gives sigma(parton-parton) = 1.56D+02 mb: accepted
+
+ ********************** PYINIT: initialization completed **********************
+
+     Advisory warning type 9 given after      706 PYEXEC calls:
+     (PYPTIS:) Sorry, I got a heavy companion quark here. Not handled yet, giving up!
+
+     Advisory warning type 9 given after     2117 PYEXEC calls:
+     (PYPTIS:) Sorry, I got a heavy companion quark here. Not handled yet, giving up!
+
+     Advisory warning type 9 given after     2392 PYEXEC calls:
+     (PYPTIS:) Sorry, I got a heavy companion quark here. Not handled yet, giving up!
+
+     Advisory warning type 9 given after     2402 PYEXEC calls:
+     (PYPTIS:) Sorry, I got a heavy companion quark here. Not handled yet, giving up!
+
+     Advisory warning type 9 given after     2437 PYEXEC calls:
+     (PYPTIS:) Sorry, I got a heavy companion quark here. Not handled yet, giving up!
+
+     Advisory warning type 9 given after     2777 PYEXEC calls:
+     (PYPTIS:) Sorry, I got a heavy companion quark here. Not handled yet, giving up!
+
+     Advisory warning type 9 given after     2972 PYEXEC calls:
+     (PYPTIS:) Sorry, I got a heavy companion quark here. Not handled yet, giving up!
+
+     Advisory warning type 9 given after     4236 PYEXEC calls:
+     (PYPTIS:) Sorry, I got a heavy companion quark here. Not handled yet, giving up!
+
+     Error type 9 has occured after     4631 PYEXEC calls:
+     (PYPTIS:) Weight   5.8884E+00 above unity
+
+     Advisory warning type 9 given after     5013 PYEXEC calls:
+     (PYPTIS:) failed to evolve shower.
+
+     Advisory warning type 9 given after     6651 PYEXEC calls:
+     (PYPTIS:) Sorry, I got a heavy companion quark here. Not handled yet, giving up!
+
+     Error type 9 has occured after    13249 PYEXEC calls:
+     (PYPTIS:) Weight   1.3010E+02 above unity
+
+     Error type 9 has occured after    25335 PYEXEC calls:
+     (PYPTIS:) Weight   1.3503E+00 above unity
+
+     Error type 9 has occured after    42759 PYEXEC calls:
+     (PYPTIS:) Weight   1.1599E+00 above unity
+
+     Error type 9 has occured after    54389 PYEXEC calls:
+     (PYPTIS:) Weight   1.0781E+00 above unity
+
+     Error type 4 has occured after    55031 PYEXEC calls:
+     (PYSTRF:) caught in infinite loop
+
+     Error type 2 has occured after    55031 PYEXEC calls:
+     (PYSTRF:) unphysical flavour combination
+
+     Error type 4 has occured after    68196 PYEXEC calls:
+     (PYSTRF:) caught in infinite loop
+
+     Error type 2 has occured after    68196 PYEXEC calls:
+     (PYSTRF:) unphysical flavour combination
+
+     Error type 9 has occured after    82474 PYEXEC calls:
+     (PYPTIS:) Weight   2.0634E+02 above unity
+
+     Error type 4 has occured after    85835 PYEXEC calls:
+     (PYSTRF:) caught in infinite loop
+
+     Error type 2 has occured after    85835 PYEXEC calls:
+     (PYSTRF:) unphysical flavour combination
+
+     Error type 2 has occured after    85835 PYEXEC calls:
+     (PYINDF:) unphysical flavour combination
+
+     Error type 9 has occured after    99590 PYEXEC calls:
+     (PYPTIS:) Weight   1.0495E+00 above unity
+1********* PYSTAT:  Statistics on Number of Events and Cross-sections *********
+
+ ==============================================================================
+ I                                  I                            I            I
+ I            Subprocess            I      Number of points      I    Sigma   I
+ I                                  I                            I            I
+ I----------------------------------I----------------------------I    (mb)    I
+ I                                  I                            I            I
+ I N:o Type                         I    Generated         Tried I            I
+ I                                  I                            I            I
+ ==============================================================================
+ I                                  I                            I            I
+ I   0 All included subprocesses    I       100000        516371 I  8.779D-05 I
+ I  11 f + f' -> f + f' (QCD)       I        15782         81043 I  1.389D-05 I
+ I  12 f + fbar -> f' + fbar'       I          327          1110 I  2.879D-07 I
+ I  13 f + fbar -> g + g            I          285           911 I  2.458D-07 I
+ I  28 f + g -> f + g               I        54582        290208 I  4.810D-05 I
+ I  53 g + g -> f + fbar            I         1158          5150 I  1.031D-06 I
+ I  68 g + g -> g + g               I        27866        137949 I  2.424D-05 I
+ I                                  I                            I            I
+ ==============================================================================
+
+ ********* Total number of errors, excluding junctions =        0 *************
+ ********* Total number of errors, including junctions =       14 *************
+ ********* Total number of warnings =                         162 *************
+ ********* Fraction of events that fail fragmentation cuts =  0.00010 *********
+

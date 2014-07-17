@@ -70,7 +70,7 @@ from IOMC.RandomEngine.RandomServiceHelper import RandomNumberServiceHelper
 randSvc = RandomNumberServiceHelper(process.RandomNumberGeneratorService)
 randSvc.populate()
 
-process.MessageLogger.cerr.FwkReport.reportEvery = 10
+process.MessageLogger.cerr.FwkReport.reportEvery = 1000
 
 # ============= Pythia setting  ================================
 from Configuration.Generator.PythiaUEZ2Settings_cfi import *
@@ -107,12 +107,12 @@ process.generator = cms.EDFilter("Pythia6GeneratorFilter",
             'PARP(93)=10.0  ! primordial kT-max', 
             'MSTP(81)=21    ! multiple parton interactions 1 is Pythia default', 
             'MSTP(82)=4     ! Defines the multi-parton model',
-            'MSTP(111)=1', #hadronisation off 
+            'MSTP(111)=1', #hadronisation off =0
             ),
          #have to change these parameters to match the ones for HAD,MPI etc... 
          processParameters = cms.vstring(
                  'MSEL=1         ! High Pt QCD',
-                 'CKIN(3)=15  ! minimum pt hat for hard interactions',
+                 #'CKIN(3)=15  ! minimum pt hat for hard interactions',
                  ),
          parameterSets = cms.vstring('pythiaUESettings',
                                      'processParameters',

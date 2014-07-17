@@ -47,7 +47,7 @@ using namespace std;
 static const int dir = 50;
 
 
-void analysis(int energy = 5020){
+void analysis(int energy = 2760){
 
 	TStopwatch timer;
 	timer.Start();
@@ -63,8 +63,8 @@ void analysis(int energy = 5020){
 	cout<<"Running for Energy = "<<energy<<endl;
 
 	
-	TFile *fin_LO = TFile::Open(Form("rootfiles/GenJet_LO_R23457_%dGeV_July9_Z2Combined.root",energy));
-	TFile *fin_HAD = TFile::Open(Form("rootfiles/GenJet_HAD_R23457_%dGeV_July9_Z2Combined.root",energy));
+	TFile *fin_LO = TFile::Open(Form("rootfiles_July16/GenJet_LO_R23457_%dGeV_July17_Z2Combined.root",energy));
+	TFile *fin_HAD = TFile::Open(Form("rootfiles_July16/GenJet_HAD_R23457_%dGeV_July17_Z2Combined.root",energy));
 
 	//get the histograms required. there are a lot here: 
 
@@ -179,6 +179,8 @@ void analysis(int energy = 5020){
     	//NPC_txt.Close();
 
     }
+
+    cout<<"finished writing the text files"<<endl;
 
 
 

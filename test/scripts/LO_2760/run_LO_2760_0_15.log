@@ -1,0 +1,67 @@
+Center-of-mass energy:  2760.0
+PYTHIA process parameters:  ['MSEL=0', 'MSUB(11)=1', 'MSUB(12)=1', 'MSUB(13)=1', 'MSUB(28)=1', 'MSUB(53)=1', 'MSUB(68)=1', 'MSUB(92)=1', 'MSUB(93)=1', 'MSUB(94)=1', 'MSUB(95)=1']
+Minimum pt-hat: 0
+Minimum pt-hat: 15
+cms.vstring('MSEL=0', 
+    'MSUB(11)=1', 
+    'MSUB(12)=1', 
+    'MSUB(13)=1', 
+    'MSUB(28)=1', 
+    'MSUB(53)=1', 
+    'MSUB(68)=1', 
+    'MSUB(92)=1', 
+    'MSUB(93)=1', 
+    'MSUB(94)=1', 
+    'MSUB(95)=1', 
+    'CKIN(3)=0', 
+    'CKIN(4)=15')
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB
+Pythia process: MB

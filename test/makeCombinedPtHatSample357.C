@@ -2,6 +2,7 @@
 
   char energy[256] = "5020";
   char order[256] = "HAD";
+  
   //const int MAXDIR = 61;
   const int MAXDIR = 50;
 
@@ -9,42 +10,44 @@
 
   // Z2 cross sections
 
-  // for 2.76 TeV
-  //double xsec[10] = {6.198e+01, 5.135e-02, 9.742e-03, 9.250e-04,
-  //                   8.812e-05, 9.771e-06, 1.256e-06, 1.795e-07,
-  //                   2.708e-08, 4.735e-09};
-  //2.76 these below are the exact values for the different pthats mentioned below. have to subtract them to get what we want. 
-  //double xsec[10] = {2.034e-01,1.075e-02,1.025e-03,9.865e-05,1.465e-06,2.837e-07,5.323e-08,5.934e-09,8.125e-10,1.467e-10};
-  // following is correct
-  //double xsec[12] = {0.7966,0.19265,0.009725,0.00092635,8.736e-05,9.825e-06,1.1813e-06,2.3047e-07,4.7296e-08,5.1215e-09,6.658e-10,1.467e-10};
-  // following is added to check for the initial pthat process 
-  //double xsec[12] = {2.034e-01,0.19265,0.009725,0.00092635,8.736e-05,9.825e-06,1.1813e-06,2.3047e-07,4.7296e-08,5.1215e-09,6.658e-10,1.467e-10};
-  //double xsec[12] = {61.77,0.19265,0.009725,0.00092635,8.736e-05,9.825e-06,1.1813e-06,2.3047e-07,4.7296e-08,5.1215e-09,6.658e-10,1.467e-10};
-
-  //getting it from the log files 
-  //double xsec[12] = {6.198e01,1.921e-01,9.771e-03,9.253e-04,8.793e-05,9.766e-06,1.185e-06,2.310e-07,4.721e-08,5.128e-09,6.647e-10,1.483e-10};
-
-  // for 5.02 TeV
-  //double xsec[10] = {6.782e+01, 1.405e-01, 2.995e-02, 3.334e-03,
-  //                  3.800e-04, 5.138e-05, 8.251e-06, 1.525e-06,
-  //                   3.141e-07, 9.160e-08};
-  //5.02 new, the last value here is wrong. make sure of that. and this doesnt have pthat value 540. remove that when running this for 5.02TeV  
-  // double xsec[10] = {5.335e-01,3.378E-02,3.778E-03,4.412E-04,6.147E-05,1.018E-05,2.477E-06,6.160E-07,1.088E-07,2.527E-08,1.467E-10};
-  // double xsec[11] = {1.8695,0.49972,0.030002,0.0033368,0.00037973,5.129e-05,7.703e-06,1.861e-06,5.072e-07,8.353e-08,2.527e-08};
-  // getting the cross section from the log files 
-  double xsec[12] = {6.782e01,4.988e-01,2.988e-02,3.329e-03,3.801e-04,5.183e-05,7.695e-06,1.863e-06,5.051e-07,8.381e-08,1.727e-08,7.847e-09};
-
-
-
+  if(energy=="2760"){
+    // for 2.76 TeV
+    //double xsec[10] = {6.198e+01, 5.135e-02, 9.742e-03, 9.250e-04,
+    //                   8.812e-05, 9.771e-06, 1.256e-06, 1.795e-07,
+    //                   2.708e-08, 4.735e-09};
+    //2.76 these below are the exact values for the different pthats mentioned below. have to subtract them to get what we want. 
+    //getting it from the log files (for when LO did not force shutoff the HAD and MPI part)
+    //double xsec[12] = {6.198e01,1.921e-01,9.771e-03,9.253e-04,8.793e-05,9.766e-06,1.185e-06,2.310e-07,4.721e-08,5.128e-09,6.647e-10,1.483e-10};
+    // when the LO is only LO, i.e the HAD and MPI are forced shut off: HAD should be the same as before: 
+    if(order=="LO"){
+      double xsec[12] = {6.198e01,1.855e-01,9.377e-03,9.009e-04,8.812e-05,1.008e-05,1.242e-06,2.477e-07,5.135e-08,5.65e-09,7.331e-10,1.624e-10};
+    }else {
+      // for HAD
+      double xsec[12] = {6.199e01,1.925e-01,9.724e-03,9.255e-04,8.779e-05,9.791e-06,1.179e-06,2.315e-07,4.703e-08,5.136e-09,6.657e-10,1.478e-10};
+    }
+  }else {
+    // for 5.02 TeV
+    //double xsec[10] = {6.782e+01, 1.405e-01, 2.995e-02, 3.334e-03,
+    //                  3.800e-04, 5.138e-05, 8.251e-06, 1.525e-06,
+    //                   3.141e-07, 9.160e-08};
+    // getting the cross section from the log files for LO without MPI and HAD declared.  
+    //double xsec[12] = {6.782e01,4.988e-01,2.988e-02,3.329e-03,3.801e-04,5.183e-05,7.695e-06,1.863e-06,5.051e-07,8.381e-08,1.727e-08,7.847e-09};
+    //for LO with forced HAD and MPI shut off: 
+    if(order=="LO"){
+      double xsec[12] = {6.781e01,4.842e-01,2.873e-02,3.213e-03,3.709e-04,5.099e-05,7.807e-06,1.927e-06,5.319e-07,8.96e-08,1.877e-08,8.563e-09};
+    }else {
+      double xsec[12] = {6.784e01,4.992e-01,2.992e-02,3.332e-03,3.801e-04,5.132e-05,7.688e-06,1.867e-06,5.058e-07,8.378e-08,1.729e-08,7.831e-09};
+  }
+  
   // for 7 TeV
   //double xsec[10] = {7.131e+01, 2.359e-01, 5.307e-02, 6.354e-03,
   //                   7.837e-04, 1.152e-04, 2.015e-05, 4.094e-06,
   //                   9.351e-07, 3.221e-07};
-  
+  }
   //the ones here were the old values. adding the new values 
 
   // need to fix first entry given as 0-inf. Subtract all 
-  // other xsecs to get 0-20
+  // other xsecs to get 0-15
   double xsec15toinf = 0.0;
   double totalxsec = xsec[0];
   for( int i=1;i<12;i++) xsec15toinf += xsec[i];
@@ -88,7 +91,7 @@
   for( int i=0; i<12;i++)
   {
     //do it once for HAD and once for LO
-    f[i] = new TFile(Form("rootfiles/GenJet_%s_R23457_%s_July8_Z2pt%s_numEvent100000.root",order,energy,rpthats[i]));
+    f[i] = new TFile(Form("rootfiles_July16/GenJet_%s_R23457_%s_July8_Z2pt%s_numEvent100000.root",order,energy,rpthats[i]));
     for( int j=0; j<MAXDIR; j++)
     {
       events[i][j] = (TH1F *) f[i]->Get(Form("%s/events",dirname[j]));
@@ -127,7 +130,7 @@
   TH1F * spectrum_out[MAXDIR];
   TH1F * spectrumf_out[MAXDIR];
 
-  TFile * f_out = new TFile(Form("rootfiles/GenJet_%s_R23457_%sGeV_July9_Z2Combined.root",order,energy),"RECREATE");
+  TFile * f_out = new TFile(Form("rootfiles_July16/GenJet_%s_R23457_%sGeV_July17_Z2Combined.root",order,energy),"RECREATE");
 
   for( int j=0;j<MAXDIR;j++)
   {
