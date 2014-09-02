@@ -131,26 +131,29 @@ void analysis(int energy = 5020){
 
     	NPC[i] = (TH1F*)HAD_spectra[i]->Clone(Form("HAD_NPC_%s",dirName[i]));
     	NPC[i]->Divide(LO_spectra[i]);
-
     }
-
-    // one for each radius
-    TCanvas *cSpectraCheck[5];
 
     char radius_title[5][256] = {"R3","R2","R4","R5","R7"};
 
     TLine *line = new TLine(50,1,300,1);
     line->SetLineStyle(2);
     line->SetLineWidth(2);
+/*
+    // one for each radius
+    TCanvas *cSpectraCheck[5];
+
+    
 
     for(int i = 1;i<=5;i++){
 
     	cSpectraCheck[i] = new TCanvas(Form("cSpectraCheck_%d",i),Form("NP correction factors for ak %s GenJet with energy %d",radius_title[i-1],energy),1200,800);
     	cSpectraCheck[i]->Divide(5,2);
+        //cSpectraCheck[i]->SetLogx();
 
     	for(int j = 1;j<=10;j++){
 
     		cSpectraCheck[i]->cd(j);
+            cSpectraCheck[i]->cd(j)->SetLogx();
 
     		drawText(Form("%s_%s",etaWidth[(i-1)*10+j-1],radius_title[i]),0.1,0.9,20);
     		line->Draw();
@@ -159,13 +162,69 @@ void analysis(int energy = 5020){
     		NPC[(i-1)*10+j-1]->SetTitle(Form("%s %s",etaWidth[(i-1)*10+j-1],radius_title[i-1]));
     		NPC[(i-1)*10+j-1]->SetXTitle("Jet p_{T} (GeV/c)");
     		NPC[(i-1)*10+j-1]->SetYTitle("correction factor");
+            TF1 *f1 = new TF1("f1","[0]+[1]*x+[2]*x*x+[3]*x*x*x+[4]*x*x*x*x");
+            NPC[(i-1)*10+j-1]->Fit("f1","","",30,500);
+            NPC[(i-1)*10+j-1]->Fit("f1","","",30,500);
+            NPC[(i-1)*10+j-1]->Fit("f1","","",30,500);
+            NPC[(i-1)*10+j-1]->Fit("f1","","",30,500);
+            NPC[(i-1)*10+j-1]->SetAxisRange(20,600,"X");
     		NPC[(i-1)*10+j-1]->Draw();
     	}
 
     	cSpectraCheck[i]->SaveAs(Form("/afs/cern.ch/work/r/rkunnawa/WORK/RAA/pp_genjets_pythia_NPC/CMSSW_5_3_8_HI_patch2/src/Appeltel/GenJetCrossCheckAnalyzer/test/plots/NPC_factors_ak_%s_energy_%d.pdf",radius_title[i-1],energy),"RECREATE");
 
     }
+*/
+    TH1F *NPC_abs_eta[5][4]; 
+    for(int i = 0;i<5;i++){
+        NPC_abs_eta[i][0] = (TH1F*)NPC[i*10+6]->Clone(Form("NPC_%s_abs_eta_0_05",radius_title[i]));
+        NPC_abs_eta[i][1] = (TH1F*)NPC[i*10+5]->Clone(Form("NPC_%s_abs_eta_05_10",radius_title[i]));
+        NPC_abs_eta[i][1]->Scale(1./2);
+        NPC[i*10+7]->Scale(1./2);
+        NPC_abs_eta[i][1]->Add(NPC[i*10+7]);
+        NPC_abs_eta[i][2] = (TH1F*)NPC[i*10+4]->Clone(Form("NPC_%s_abs_eta_10_15",radius_title[i]));
+        NPC_abs_eta[i][2]->Scale(1./2);
+        NPC[i*10+8]->Scale(1./2);
+        NPC_abs_eta[i][2]->Add(NPC[i*10+8]);
+        NPC_abs_eta[i][3] = (TH1F*)NPC[i*10+3]->Clone(Form("NPC_%s_abs_eta_15_20",radius_title[i]));
+        NPC_abs_eta[i][3]->Scale(1./2);
+        NPC[i*10+9]->Scale(1./2);
+        NPC_abs_eta[i][3]->Add(NPC[i*10+9]);
+    }
+    char absEta[4][256] = {"0.0<|#eta|<0.5","0.5<|#eta|<1.0","1.0<|#eta|<1.5","1.5<|#eta|<2.0"};
 
+    TCanvas *cNPC_Abs[5];
+
+    for(int i = 0;i<5;i++){
+
+        cNPC_Abs[i] = new TCanvas(Form("cNPC_Abs_%d",i),Form("NP correction factors for %s GenJet with energy %d",radius_title[i],energy),1200,800);
+        cNPC_Abs[i]->Divide(3,2);
+        for(int j = 0;j<4;j++){
+
+            cNPC_Abs[i]->cd(j+1);
+            cNPC_Abs[i]->cd(j+1)->SetLogx();
+
+            drawText(Form("%s_%s",absEta[j],radius_title[i]),0.1,0.9,20);
+            line->Draw();
+            NPC_abs_eta[i][j]->SetMarkerStyle(33);
+            NPC_abs_eta[i][j]->SetMarkerColor(kBlack);
+            NPC_abs_eta[i][j]->SetTitle(Form("%s_%s",absEta[j],radius_title[i]));
+            NPC_abs_eta[i][j]->SetXTitle("Jet p_{T} (GeV/c)");
+            NPC_abs_eta[i][j]->SetYTitle("correction factor");
+            //NPC_abs_eta[i][j]->Scale(1./2);
+            //TF1 *f2 = new TF1("f2","[0]+[1]*x+[2]*x*x+[3]*x*x*x+[4]*x*x*x*x");
+            TF1 *f2 = new TF1("f2","1-[0]/pow(x,[1])");
+            NPC_abs_eta[i][j]->Fit("f2","","",30,500);
+            NPC_abs_eta[i][j]->Fit("f2","","",30,500);
+            NPC_abs_eta[i][j]->Fit("f2","","",30,500);
+            NPC_abs_eta[i][j]->Fit("f2","","",30,500);
+            NPC_abs_eta[i][j]->SetAxisRange(20,600,"X");
+            NPC_abs_eta[i][j]->Draw();
+        }
+        cNPC_Abs[i]->SaveAs(Form("/afs/cern.ch/work/r/rkunnawa/WORK/RAA/pp_genjets_pythia_NPC/CMSSW_5_3_8_HI_patch2/src/Appeltel/GenJetCrossCheckAnalyzer/test/plots/NPC_factors_absEta_ak_%s_energy_%d.pdf",radius_title[i],energy));
+    }
+
+    
     //create the text files. 
     ofstream NPC_txt[dir];
     for(int i = 0;i<dir;i++){
@@ -181,7 +240,7 @@ void analysis(int energy = 5020){
     }
 
     cout<<"finished writing the text files"<<endl;
-
+    
 
 
 }
