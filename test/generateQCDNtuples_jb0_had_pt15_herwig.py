@@ -87,26 +87,26 @@ process.SkipEvent = cms.untracked.vstring('ProductNotFound')
 #process.rdpy = cms.EndPath(process.readpythiaevents)
 
 ###output TFile--------------------------------- 
-process.TFileService = cms.Service(
-    "TFileService",
-    fileName = cms.string(otFile),
-    #closeFileFast = cms.untracked.bool(True)
-)
+#process.TFileService = cms.Service(
+#    "TFileService",
+#    fileName = cms.string(otFile),
+3    #closeFileFast = cms.untracked.bool(True)
+#)
 
 
 # Output definition
-#process.output = cms.OutputModule("PoolOutputModule",
-#    splitLevel = cms.untracked.int32(0),
+process.output = cms.OutputModule("PoolOutputModule",
+    splitLevel = cms.untracked.int32(0),
 #    outputCommands = cms.untracked.vstring('drop *'),
-#    fileName = cms.untracked.string('dummyOutput.root'),
-#    dataset = cms.untracked.PSet(
-#        dataTier = cms.untracked.string(''),
-#        filterName = cms.untracked.string('')
-#    ),
-#    SelectEvents = cms.untracked.PSet(
-#        SelectEvents = cms.vstring('generation_step')
-#    )
-#)
+    fileName = cms.untracked.string('dummyOutput.root'),
+    dataset = cms.untracked.PSet(
+        dataTier = cms.untracked.string(''),
+        filterName = cms.untracked.string('')
+    ),
+    SelectEvents = cms.untracked.PSet(
+        SelectEvents = cms.vstring('generation_step')
+    )
+)
 
 
 # Other statements
