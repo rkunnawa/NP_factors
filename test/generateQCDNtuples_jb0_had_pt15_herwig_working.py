@@ -1,12 +1,41 @@
 import FWCore.ParameterSet.Config as cms
+import FWCore.ParameterSet.VarParsing as VarParsing
+import os
 
 process = cms.Process('GEN')
 
-qLimit         = 20000
-ptmin          = str(15)
-ptmax          = str(1000)
-numEventsToRun = 10
-otFile         = "../genNtuple_jb0_Had_pt15.root"
+# var parsing # 
+options = VarParsing.VarParsing ('standard')
+options.numEventsToRun = 10
+options.otFile = 'genNtuple_jb0_Had_Herwig_analyzer_test_pt15_1000.root'
+options.qLimit         = 20000
+
+options.register('sqrtS',
+                 2760.0,
+                 VarParsing.VarParsing.multiplicity.singleton,
+                 VarParsing.VarParsing.varType.float,
+                 "Center-of-mass energy")
+
+options.register('ptHatLow',
+                 120,
+                 VarParsing.VarParsing.multiplicity.singleton,
+                 VarParsing.VarParsing.varType.int,
+                 "Minimum pt-hat")
+
+options.register('ptHatHigh',
+                 160,
+                 VarParsing.VarParsing.multiplicity.singleton,
+                 VarParsing.VarParsing.varType.int,
+                 "Maximum pt-hat")
+
+
+processType = 'NSD'
+
+ptmin          = str(ptHatLow)
+ptmax          = str(ptHatHigh)
+#otFile         = "genNtuple_jb0_Had_Herwig_analyzer_test_pt15_1000.root"
+
+options.parseArguments()
 
 # import of standard configurations
 process.load('Configuration.StandardSequences.Services_cff')
@@ -21,7 +50,7 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.load('Configuration.EventContent.EventContent_cff')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(numEventsToRun)
+    input = cms.untracked.int32(options.numEventsToRun)
 )
 process.MessageLogger.cerr.FwkReport.reportEvery = 1
 
@@ -37,23 +66,27 @@ process.source = cms.Source("EmptySource")
 ###output TFile--------------------------------- 
 process.TFileService = cms.Service(
     "TFileService",
-    fileName = cms.string(otFile),
-    closeFileFast = cms.untracked.bool(True)
+    fileName = cms.string(options.otFile),
+    #closeFileFast = cms.untracked.bool(True)
 )
 
 
 # Output definition
+
 process.output = cms.OutputModule("PoolOutputModule",
-    #splitLevel = cms.untracked.int32(0),
-    #outputCommands = cms.untracked.vstring('drop *'),
-    fileName = cms.untracked.string('dummyOutput.root'),
-    #dataset = cms.untracked.PSet(
-    #    dataTier = cms.untracked.string(''),
-    #    filterName = cms.untracked.string('')
-                                  #),
-    #SelectEvents = cms.untracked.PSet(
-    #    SelectEvents = cms.vstring('generation_step')
-                                  #)
+                                  
+#                                  splitLevel = cms.untracked.int32(0),
+#                                  outputCommands = cms.untracked.vstring('drop *'),
+                                  
+                                  fileName = cms.untracked.string('dummyOutput.root'),
+                                  
+#                                  dataset = cms.untracked.PSet(
+#                                      dataTier = cms.untracked.string(''),
+#                                      filterName = cms.untracked.string('')
+#                                  ),
+#                                  SelectEvents = cms.untracked.PSet(
+#                                      SelectEvents = cms.vstring('generation_step')
+#                                  )
 )
 
 
@@ -345,38 +378,38 @@ herwigppUESettingsBlock = cms.PSet(
 )
 
 process.generator = cms.EDFilter("ThePEGGeneratorFilter",
-        herwigDefaultsBlock,
-        herwigppUESettingsBlock,
-        crossSection = cms.untracked.double(202900000),
-        filterEfficiency = cms.untracked.double(1),
-
-        configFiles = cms.vstring(),
-        parameterSets = cms.vstring(
-                'herwigppUE_EE_3C_7000GeV',
-                'productionParameters',
-                'basicSetup',
-                'setParticlesStableForDetector',
-        ),
-        productionParameters = cms.vstring(
-                'mkdir /Herwig/Weights',
-                'cd /Herwig/Weights',
-                'create ThePEG::ReweightMinPT reweightMinPT ReweightMinPT.so',
-
-                'cd /Herwig/MatrixElements/',
-                'insert SimpleQCD:MatrixElements[0] MEQCD2to2',
-                'insert SimpleQCD:Preweights[0] /Herwig/Weights/reweightMinPT',
-
-                'cd /',
-                'set /Herwig/Weights/reweightMinPT:Power 4.5',
-                'set /Herwig/Weights/reweightMinPT:Scale 15*GeV',
-                'set /Herwig/Cuts/JetKtCut:MinKT '+ptmin+'*GeV', 
-                'set /Herwig/Cuts/JetKtCut:MaxKT '+ptmax+'*GeV', 
-                'set /Herwig/Cuts/QCDCuts:MHatMin 0.0*GeV', 
-                'set /Herwig/UnderlyingEvent/MPIHandler:IdenticalToUE 0',
-		           #'set /Herwig/Shower/ShowerHandler:MPIHandler NULL',
-		           #'set /Herwig/EventHandlers/LHCHandler:HadronizationHandler NULL'
-        ),
-)
+                                 herwigDefaultsBlock,
+                                 herwigppUESettingsBlock,
+                                 crossSection = cms.untracked.double(202900000),
+                                 filterEfficiency = cms.untracked.double(1),
+                                 
+                                 configFiles = cms.vstring(),
+                                 parameterSets = cms.vstring(
+                                     'herwigppUE_EE_3C_7000GeV',
+                                     'productionParameters',
+                                     'basicSetup',
+                                     'setParticlesStableForDetector',
+                                 ),
+                                 productionParameters = cms.vstring(
+                                     'mkdir /Herwig/Weights',
+                                     'cd /Herwig/Weights',
+                                     'create ThePEG::ReweightMinPT reweightMinPT ReweightMinPT.so',
+                                     
+                                     'cd /Herwig/MatrixElements/',
+                                     'insert SimpleQCD:MatrixElements[0] MEQCD2to2',
+                                     'insert SimpleQCD:Preweights[0] /Herwig/Weights/reweightMinPT',
+                                     
+                                     'cd /',
+                                     'set /Herwig/Weights/reweightMinPT:Power 4.5',
+                                     'set /Herwig/Weights/reweightMinPT:Scale 15*GeV',
+                                     'set /Herwig/Cuts/JetKtCut:MinKT '+ptmin+'*GeV', 
+                                     'set /Herwig/Cuts/JetKtCut:MaxKT '+ptmax+'*GeV', 
+                                     'set /Herwig/Cuts/QCDCuts:MHatMin 0.0*GeV', 
+                                     'set /Herwig/UnderlyingEvent/MPIHandler:IdenticalToUE 0',
+                                     #'set /Herwig/Shower/ShowerHandler:MPIHandler NULL',
+                                     #'set /Herwig/EventHandlers/LHCHandler:HadronizationHandler NULL'
+                                 ),
+                             )
 
 process.ProductionFilterSequence = cms.Sequence(process.generator)
 
@@ -394,14 +427,261 @@ process.genjet_step = cms.Path(process.genJetParticles
                                * process.ak4GenJets
                                * process.ak5GenJets
                                * process.ak7GenJets
+                           )
+
+
+# =============== Analysis =============================
+process.ak3GenJetSpectrum = cms.EDAnalyzer('GenJetCrossCheckAnalyzer',
+    genJetSrc = cms.InputTag("ak3GenJets"),
+    genParticleSrc = cms.InputTag("genParticles"),
+    doCMatrix = cms.bool(True),
+    doFlavor = cms.bool(False),
+    flavorSrc = cms.InputTag("flavourByRef"),
+    flavorId = cms.vint32(0),    
+    jetsByAbsRapidity = cms.bool(False),
+    etaMin = cms.double(-1.0),
+    etaMax = cms.double(1.0),
+    jetRadius = cms.double(0.3),
+    pthatMin = cms.double(ptHatLow),
+    pthatMax = cms.double(ptHatHigh),
+    ptBins = cms.vdouble( 3, 4, 5, 7, 9, 12, 15, 18,21,24,28,32,37,43,49,56,64,74,84,97,114,133,153,174,196,220,245,272,300,330,362,395,430,468,507,548,592,638,686,1000 ),
+    pythiaProcess = cms.string(processType),
+    dijetEtaBins = cms.vdouble( -3.01, -2.63333, -2.07, -1.78833, -1.50667, -1.225, -0.943333, -0.661667, -0.38, -0.0983333, 0.183333, 0.465, 0.746667, 1.02833, 1.31, 1.59167, 1.87333, 2.43667, 3.0),
+    dijetEtaWeights = cms.vdouble( 1, 0.772085, 0.701301, 0.753585, 0.813741, 0.882849, 0.943137, 0.977332, 0.993655, 1.0375, 1.04713, 1.04826, 1.05517, 1.05983, 1.0723, 1.06945, 1.01587, 1.41731 )    
 )
 
+process.ak3GenJetSpectrum_n10_p10 = process.ak3GenJetSpectrum.clone(
+    doCMatrix = cms.bool(False)
+)
+process.ak3GenJetSpectrum_n20_p20 = process.ak3GenJetSpectrum_n10_p10.clone(
+    etaMin = cms.double(-2.0),
+    etaMax = cms.double(2.0)
+)
+process.ak3GenJetSpectrum_n25_n20 = process.ak3GenJetSpectrum_n10_p10.clone(
+    etaMin = cms.double(-2.5),
+    etaMax = cms.double(-2.0)
+)
+process.ak3GenJetSpectrum_n20_n15 = process.ak3GenJetSpectrum_n10_p10.clone(
+    etaMin = cms.double(-2.0),
+    etaMax = cms.double(-1.5)
+)
+process.ak3GenJetSpectrum_n15_n10 = process.ak3GenJetSpectrum_n10_p10.clone(
+    etaMin = cms.double(-1.5),
+    etaMax = cms.double(-1.0)
+)
+process.ak3GenJetSpectrum_n10_n05 = process.ak3GenJetSpectrum_n10_p10.clone(
+    etaMin = cms.double(-1.0),
+    etaMax = cms.double(-0.5)
+)
+process.ak3GenJetSpectrum_n05_p05 = process.ak3GenJetSpectrum_n10_p10.clone(
+    etaMin = cms.double(-0.5),
+    etaMax = cms.double(0.5)
+)
+process.ak3GenJetSpectrum_p05_p10 = process.ak3GenJetSpectrum_n10_p10.clone(
+    etaMin = cms.double(0.5),
+    etaMax = cms.double(1.0)
+)
+process.ak3GenJetSpectrum_p10_p15 = process.ak3GenJetSpectrum_n10_p10.clone(
+    etaMin = cms.double(1.0),
+    etaMax = cms.double(1.5)
+)
+process.ak3GenJetSpectrum_p15_p20 = process.ak3GenJetSpectrum_n10_p10.clone(
+    etaMin = cms.double(1.5),
+    etaMax = cms.double(2.0)
+)
+
+#R=0.2
+process.ak2GenJetSpectrum_n10_p10 = process.ak3GenJetSpectrum_n10_p10.clone(
+    genJetSrc = cms.InputTag("ak2GenJets")
+)
+process.ak2GenJetSpectrum_n20_p20 = process.ak3GenJetSpectrum_n20_p20.clone(
+    genJetSrc = cms.InputTag("ak2GenJets")
+)
+process.ak2GenJetSpectrum_n25_n20 = process.ak3GenJetSpectrum_n25_n20.clone(
+    genJetSrc = cms.InputTag("ak2GenJets")
+)
+process.ak2GenJetSpectrum_n20_n15 = process.ak3GenJetSpectrum_n20_n15.clone(
+    genJetSrc = cms.InputTag("ak2GenJets")
+)
+process.ak2GenJetSpectrum_n15_n10 = process.ak3GenJetSpectrum_n15_n10.clone(
+    genJetSrc = cms.InputTag("ak2GenJets")
+)
+process.ak2GenJetSpectrum_n10_n05 = process.ak3GenJetSpectrum_n10_n05.clone(
+    genJetSrc = cms.InputTag("ak2GenJets")
+)
+process.ak2GenJetSpectrum_n05_p05 = process.ak3GenJetSpectrum_n05_p05.clone(
+    genJetSrc = cms.InputTag("ak2GenJets")
+)
+process.ak2GenJetSpectrum_p05_p10 = process.ak3GenJetSpectrum_p05_p10.clone(
+    genJetSrc = cms.InputTag("ak2GenJets")
+)
+process.ak2GenJetSpectrum_p10_p15 = process.ak3GenJetSpectrum_p10_p15.clone(
+    genJetSrc = cms.InputTag("ak2GenJets")
+)
+process.ak2GenJetSpectrum_p15_p20 = process.ak3GenJetSpectrum_p15_p20.clone(
+    genJetSrc = cms.InputTag("ak2GenJets")
+)
+
+#R=0.4
+process.ak4GenJetSpectrum_n10_p10 = process.ak3GenJetSpectrum_n10_p10.clone(
+    genJetSrc = cms.InputTag("ak4GenJets")
+)
+process.ak4GenJetSpectrum_n20_p20 = process.ak3GenJetSpectrum_n20_p20.clone(
+    genJetSrc = cms.InputTag("ak4GenJets")
+)
+process.ak4GenJetSpectrum_n25_n20 = process.ak3GenJetSpectrum_n25_n20.clone(
+    genJetSrc = cms.InputTag("ak4GenJets")
+)
+process.ak4GenJetSpectrum_n20_n15 = process.ak3GenJetSpectrum_n20_n15.clone(
+    genJetSrc = cms.InputTag("ak4GenJets")
+)
+process.ak4GenJetSpectrum_n15_n10 = process.ak3GenJetSpectrum_n15_n10.clone(
+    genJetSrc = cms.InputTag("ak4GenJets")
+)
+process.ak4GenJetSpectrum_n10_n05 = process.ak3GenJetSpectrum_n10_n05.clone(
+    genJetSrc = cms.InputTag("ak4GenJets")
+)
+process.ak4GenJetSpectrum_n05_p05 = process.ak3GenJetSpectrum_n05_p05.clone(
+    genJetSrc = cms.InputTag("ak4GenJets")
+)
+process.ak4GenJetSpectrum_p05_p10 = process.ak3GenJetSpectrum_p05_p10.clone(
+    genJetSrc = cms.InputTag("ak4GenJets")
+)
+process.ak4GenJetSpectrum_p10_p15 = process.ak3GenJetSpectrum_p10_p15.clone(
+    genJetSrc = cms.InputTag("ak4GenJets")
+)
+process.ak4GenJetSpectrum_p15_p20 = process.ak3GenJetSpectrum_p15_p20.clone(
+    genJetSrc = cms.InputTag("ak4GenJets")
+)
+
+#R=0.5
+process.ak5GenJetSpectrum_n10_p10 = process.ak3GenJetSpectrum_n10_p10.clone(
+    genJetSrc = cms.InputTag("ak5GenJets")
+)
+process.ak5GenJetSpectrum_n20_p20 = process.ak3GenJetSpectrum_n20_p20.clone(
+    genJetSrc = cms.InputTag("ak5GenJets")
+)
+process.ak5GenJetSpectrum_n25_n20 = process.ak3GenJetSpectrum_n25_n20.clone(
+    genJetSrc = cms.InputTag("ak5GenJets")
+)
+process.ak5GenJetSpectrum_n20_n15 = process.ak3GenJetSpectrum_n20_n15.clone(
+    genJetSrc = cms.InputTag("ak5GenJets")
+)
+process.ak5GenJetSpectrum_n15_n10 = process.ak3GenJetSpectrum_n15_n10.clone(
+    genJetSrc = cms.InputTag("ak5GenJets")
+)
+process.ak5GenJetSpectrum_n10_n05 = process.ak3GenJetSpectrum_n10_n05.clone(
+    genJetSrc = cms.InputTag("ak5GenJets")
+)
+process.ak5GenJetSpectrum_n05_p05 = process.ak3GenJetSpectrum_n05_p05.clone(
+    genJetSrc = cms.InputTag("ak5GenJets")
+)
+process.ak5GenJetSpectrum_p05_p10 = process.ak3GenJetSpectrum_p05_p10.clone(
+    genJetSrc = cms.InputTag("ak5GenJets")
+)
+process.ak5GenJetSpectrum_p10_p15 = process.ak3GenJetSpectrum_p10_p15.clone(
+    genJetSrc = cms.InputTag("ak5GenJets")
+)
+process.ak5GenJetSpectrum_p15_p20 = process.ak3GenJetSpectrum_p15_p20.clone(
+    genJetSrc = cms.InputTag("ak5GenJets")
+)
+
+#R=0.7
+process.ak7GenJetSpectrum_n10_p10 = process.ak3GenJetSpectrum_n10_p10.clone(
+    genJetSrc = cms.InputTag("ak7GenJets")
+)
+process.ak7GenJetSpectrum_n20_p20 = process.ak3GenJetSpectrum_n20_p20.clone(
+    genJetSrc = cms.InputTag("ak7GenJets")
+)
+process.ak7GenJetSpectrum_n25_n20 = process.ak3GenJetSpectrum_n25_n20.clone(
+    genJetSrc = cms.InputTag("ak7GenJets")
+)
+process.ak7GenJetSpectrum_n20_n15 = process.ak3GenJetSpectrum_n20_n15.clone(
+    genJetSrc = cms.InputTag("ak7GenJets")
+)
+process.ak7GenJetSpectrum_n15_n10 = process.ak3GenJetSpectrum_n15_n10.clone(
+    genJetSrc = cms.InputTag("ak7GenJets")
+)
+process.ak7GenJetSpectrum_n10_n05 = process.ak3GenJetSpectrum_n10_n05.clone(
+    genJetSrc = cms.InputTag("ak7GenJets")
+)
+process.ak7GenJetSpectrum_n05_p05 = process.ak3GenJetSpectrum_n05_p05.clone(
+    genJetSrc = cms.InputTag("ak7GenJets")
+)
+process.ak7GenJetSpectrum_p05_p10 = process.ak3GenJetSpectrum_p05_p10.clone(
+    genJetSrc = cms.InputTag("ak7GenJets")
+)
+process.ak7GenJetSpectrum_p10_p15 = process.ak3GenJetSpectrum_p10_p15.clone(
+    genJetSrc = cms.InputTag("ak7GenJets")
+)
+process.ak7GenJetSpectrum_p15_p20 = process.ak3GenJetSpectrum_p15_p20.clone(
+    genJetSrc = cms.InputTag("ak7GenJets")
+)
+
+
+
+process.ana_step = cms.Path(
+    process.ak3GenJetSpectrum_n10_p10 * 
+    process.ak3GenJetSpectrum_n20_p20 *
+    process.ak3GenJetSpectrum_n25_n20 *
+    process.ak3GenJetSpectrum_n20_n15 *
+    process.ak3GenJetSpectrum_n15_n10 *
+    process.ak3GenJetSpectrum_n10_n05 *
+    process.ak3GenJetSpectrum_n05_p05 *
+    process.ak3GenJetSpectrum_p05_p10 *
+    process.ak3GenJetSpectrum_p10_p15 *
+    process.ak3GenJetSpectrum_p15_p20 *
+
+    process.ak2GenJetSpectrum_n10_p10 * 
+    process.ak2GenJetSpectrum_n20_p20 *
+    process.ak2GenJetSpectrum_n25_n20 *
+    process.ak2GenJetSpectrum_n20_n15 *
+    process.ak2GenJetSpectrum_n15_n10 *
+    process.ak2GenJetSpectrum_n10_n05 *
+    process.ak2GenJetSpectrum_n05_p05 *
+    process.ak2GenJetSpectrum_p05_p10 *
+    process.ak2GenJetSpectrum_p10_p15 *
+    process.ak2GenJetSpectrum_p15_p20 *
+
+    process.ak4GenJetSpectrum_n10_p10 * 
+    process.ak4GenJetSpectrum_n20_p20 *
+    process.ak4GenJetSpectrum_n25_n20 *
+    process.ak4GenJetSpectrum_n20_n15 *
+    process.ak4GenJetSpectrum_n15_n10 *
+    process.ak4GenJetSpectrum_n10_n05 *
+    process.ak4GenJetSpectrum_n05_p05 *
+    process.ak4GenJetSpectrum_p05_p10 *
+    process.ak4GenJetSpectrum_p10_p15 *
+    process.ak4GenJetSpectrum_p15_p20 *
+
+    process.ak5GenJetSpectrum_n10_p10 * 
+    process.ak5GenJetSpectrum_n20_p20 *
+    process.ak5GenJetSpectrum_n25_n20 *
+    process.ak5GenJetSpectrum_n20_n15 *
+    process.ak5GenJetSpectrum_n15_n10 *
+    process.ak5GenJetSpectrum_n10_n05 *
+    process.ak5GenJetSpectrum_n05_p05 *
+    process.ak5GenJetSpectrum_p05_p10 *
+    process.ak5GenJetSpectrum_p10_p15 *
+    process.ak5GenJetSpectrum_p15_p20 *
+
+    process.ak7GenJetSpectrum_n10_p10 * 
+    process.ak7GenJetSpectrum_n20_p20 *
+    process.ak7GenJetSpectrum_n25_n20 *
+    process.ak7GenJetSpectrum_n20_n15 *
+    process.ak7GenJetSpectrum_n15_n10 *
+    process.ak7GenJetSpectrum_n10_n05 *
+    process.ak7GenJetSpectrum_n05_p05 *
+    process.ak7GenJetSpectrum_p05_p10 *
+    process.ak7GenJetSpectrum_p10_p15 *
+    process.ak7GenJetSpectrum_p15_p20 
+)
 
 process.endjob_step = cms.Path(process.endOfProcess)
 process.out_step = cms.EndPath(process.output)
 
 # Schedule definition
-process.schedule = cms.Schedule(process.generation_step, process.genjet_step,process.endjob_step,process.out_step)
+process.schedule = cms.Schedule(process.generation_step, process.genjet_step,process.ana_step,process.endjob_step,process.out_step)
 
 # special treatment in case of production filter sequence  
 for path in process.paths: 
