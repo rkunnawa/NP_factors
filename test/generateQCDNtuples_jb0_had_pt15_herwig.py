@@ -916,12 +916,12 @@ process.ana_step = cms.Path(
 )
 
 # Path and EndPath definitions
-process.generation_step = cms.Path(process.pgen)
+#process.generation_step = cms.Path(process.pgen)
 #process.endjob_step = cms.Path(process.endOfProcess)
 #process.out_step = cms.EndPath(process.output)
 
 # Schedule definition
-process.schedule = cms.Schedule(process.generation_step,process.genjet_step,process.ana_step)
+process.schedule = cms.Schedule(process.gen_step,process.genjet_step,process.ana_step)
 
 # special treatment in case of production filter sequence  
 #for path in process.paths: 

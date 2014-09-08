@@ -59,6 +59,7 @@ process.output = cms.OutputModule("PoolOutputModule",
 
 # Other statements
 process.GlobalTag.globaltag = 'STARTHI53_V28::All'
+
 herwigDefaultsBlock = cms.PSet(
   dataLocation = cms.string('/cvmfs/cms.cern.ch/slc5_amd64_gcc462/external/herwigpp/2.5.0-cms7/share/Herwig++'),
 
@@ -380,12 +381,27 @@ process.generator = cms.EDFilter("ThePEGGeneratorFilter",
 process.ProductionFilterSequence = cms.Sequence(process.generator)
 
 # Path and EndPath definitions
-process.generation_step = cms.Path(process.pgen)
+process.generation_step = cms.Path(process.generator * process.genParticles)
+
+process.ak2GenJets = process.ak5GenJets.clone( rParam = 0.2 )
+process.ak3GenJets = process.ak5GenJets.clone( rParam = 0.3 )
+process.ak4GenJets = process.ak5GenJets.clone( rParam = 0.4 )
+process.ak7GenJets = process.ak5GenJets.clone( rParam = 0.7 )
+
+process.genjet_step = cms.Path(process.genJetParticles 
+                               * process.ak2GenJets
+                               * process.ak3GenJets
+                               * process.ak4GenJets
+                               * process.ak5GenJets
+                               * process.ak7GenJets
+)
+
+
 process.endjob_step = cms.Path(process.endOfProcess)
 process.out_step = cms.EndPath(process.output)
 
 # Schedule definition
-process.schedule = cms.Schedule(process.generation_step,process.endjob_step,process.out_step)
+process.schedule = cms.Schedule(process.generation_step, process.genjet_step,process.endjob_step,process.out_step)
 
 # special treatment in case of production filter sequence  
 for path in process.paths: 
