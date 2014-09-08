@@ -44,16 +44,16 @@ process.TFileService = cms.Service(
 
 # Output definition
 process.output = cms.OutputModule("PoolOutputModule",
-    splitLevel = cms.untracked.int32(0),
+    #splitLevel = cms.untracked.int32(0),
     #outputCommands = cms.untracked.vstring('drop *'),
     fileName = cms.untracked.string('dummyOutput.root'),
-    dataset = cms.untracked.PSet(
-        dataTier = cms.untracked.string(''),
-        filterName = cms.untracked.string('')
-    ),
-    SelectEvents = cms.untracked.PSet(
-        SelectEvents = cms.vstring('generation_step')
-    )
+    #dataset = cms.untracked.PSet(
+    #    dataTier = cms.untracked.string(''),
+    #    filterName = cms.untracked.string('')
+                                  #),
+    #SelectEvents = cms.untracked.PSet(
+    #    SelectEvents = cms.vstring('generation_step')
+                                  #)
 )
 
 
