@@ -47,7 +47,7 @@ using namespace std;
 static const int dir = 50;
 
 
-void analysis(int energy = 5020){
+void analysis(int energy = 2760){
 
 	TStopwatch timer;
 	timer.Start();
@@ -61,10 +61,9 @@ void analysis(int energy = 5020){
 
 	cout<<"Starting the calculation of the NP correction facrors"<<endl;
 	cout<<"Running for Energy = "<<energy<<endl;
-
 	
-	TFile *fin_LO = TFile::Open(Form("rootfiles_July16/GenJet_LO_R23457_%dGeV_July17_Z2Combined.root",energy));
-	TFile *fin_HAD = TFile::Open(Form("rootfiles_July16/GenJet_HAD_R23457_%dGeV_July17_Z2Combined.root",energy));
+	TFile *fin_LO = TFile::Open(Form("GenJet_LO_R23475_%d_Herwig_analyzer_20000_qLimit_15_pthat_1000_20140910.root",energy));
+	TFile *fin_HAD = TFile::Open(Form("GenJet_HAD_R23475_%d_Herwig_analyzer_20000_qLimit_15_pthat_1000_20140910.root",energy));
 
 	//get the histograms required. there are a lot here: 
 
@@ -124,12 +123,12 @@ void analysis(int energy = 5020){
 
     for(int i = 0;i<dir;i++){
 
-    	LO_spectra[i] = (TH1F*)fin_LO->Get(Form("%s/JetSpectrum",dirName[i]));
-    	LO_spectraFine[i] = (TH1F*)fin_LO->Get(Form("%s/JetSpectrum_Fine",dirName[i]));
-    	HAD_spectra[i] = (TH1F*)fin_HAD->Get(Form("%s/JetSpectrum",dirName[i]));
-    	HAD_spectraFine[i] = (TH1F*)fin_HAD->Get(Form("%s/JetSpectrum_Fine",dirName[i]));
+    	LO_spectra[i] = (TH1F*)fin_LO->Get(Form("%s/spectrum",dirName[i]));
+    	LO_spectraFine[i] = (TH1F*)fin_LO->Get(Form("%s/spectrum_Fine",dirName[i]));
+    	HAD_spectra[i] = (TH1F*)fin_HAD->Get(Form("%s/spectrum",dirName[i]));
+    	HAD_spectraFine[i] = (TH1F*)fin_HAD->Get(Form("%s/spectrum_Fine",dirName[i]));
 
-    	NPC[i] = (TH1F*)HAD_spectra[i]->Clone(Form("HAD_NPC_%s",dirName[i]));
+    	NPC[i] = (TH1F*)HAD_spectra[i]->Clone(Form("NPC_%s",dirName[i]));
     	NPC[i]->Divide(LO_spectra[i]);
     }
 
@@ -141,8 +140,6 @@ void analysis(int energy = 5020){
 /*
     // one for each radius
     TCanvas *cSpectraCheck[5];
-
-    
 
     for(int i = 1;i<=5;i++){
 
@@ -197,7 +194,7 @@ void analysis(int energy = 5020){
 
     for(int i = 0;i<5;i++){
 
-        cNPC_Abs[i] = new TCanvas(Form("cNPC_Abs_%d",i),Form("NP correction factors for %s GenJet with energy %d",radius_title[i],energy),1200,800);
+        cNPC_Abs[i] = new TCanvas(Form("cNPC_Abs_%d",i),Form("NP correction factors from Herwig++ for %s GenJet with energy %d",radius_title[i],energy),1200,800);
         cNPC_Abs[i]->Divide(3,2);
         for(int j = 0;j<4;j++){
 
@@ -221,14 +218,14 @@ void analysis(int energy = 5020){
             NPC_abs_eta[i][j]->SetAxisRange(20,600,"X");
             NPC_abs_eta[i][j]->Draw();
         }
-        cNPC_Abs[i]->SaveAs(Form("/afs/cern.ch/work/r/rkunnawa/WORK/RAA/pp_genjets_pythia_NPC/CMSSW_5_3_8_HI_patch2/src/Appeltel/GenJetCrossCheckAnalyzer/test/plots/NPC_factors_absEta_ak_%s_energy_%d.pdf",radius_title[i],energy));
+        cNPC_Abs[i]->SaveAs(Form("/afs/cern.ch/work/r/rkunnawa/WORK/RAA/pp_genjets_pythia_NPC/CMSSW_5_3_8_HI_patch2/src/Appeltel/GenJetCrossCheckAnalyzer/test/plots/NPC_factors_Herwigpp_absEta_ak_%s_energy_%d.pdf",radius_title[i],energy));
     }
-
+    
     
     //create the text files. 
     ofstream NPC_txt[dir];
     for(int i = 0;i<dir;i++){
-    	NPC_txt[i].open(Form("txtfiles/NPC_ak_%s_%s_energy%d.txt",radius_lable[i],etaWidth[i],energy));
+    	NPC_txt[i].open(Form("txtfiles/NPC_Herwig_ak_%s_%s_energy%d.txt",radius_lable[i],etaWidth[i],energy));
 
     	for(int j = 0;j<NPC[0]->GetNbinsX();j++){
     		float bincenter = NPC[i]->GetBinCenter(j);
