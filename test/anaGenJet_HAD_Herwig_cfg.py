@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 import FWCore.ParameterSet.VarParsing as VarParsing
 import os
+import datetime
 
 process = cms.Process('GEN')
 
@@ -9,11 +10,11 @@ options = VarParsing.VarParsing ('standard')
 options.maxEvents = 10
 #options.qLimit         = 20000
 
-options.register('qLimit',
-                 20000,
-                 VarParsing.VarParsing.multiplicity.singleton,
-                 VarParsing.VarParsing.varType.int,
-                 "Q2 Limit")
+#options.register('qLimit',
+#                 20000,
+#                 VarParsing.VarParsing.multiplicity.singleton,
+#                 VarParsing.VarParsing.varType.int,
+#                 "Q2 Limit")
 
 options.register('ptHatLow',
                  15,
@@ -29,7 +30,9 @@ options.register('ptHatHigh',
 
 processType = 'NSD'
 
-otFile = 'GenJet_HAD_R23475_2760_Herwig_analyzer_%d_qLimit_%d_pthat_%d_20140910.root' % (options.qLimit,options.ptHatLow, options.ptHatHigh)
+i = datetime.datetime.now()
+
+otFile = 'GenJet_HAD_R23475_2760_Herwig_analyzer_%d_pthat_%d_%s%s%s.root' % (options.ptHatLow, options.ptHatHigh, i.year, i.month, i.day)
 
 ptmin          = str(options.ptHatLow)
 ptmax          = str(options.ptHatHigh)
@@ -51,7 +54,7 @@ process.load('Configuration.EventContent.EventContent_cff')
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(options.maxEvents)
 )
-process.MessageLogger.cerr.FwkReport.reportEvery = 10000
+process.MessageLogger.cerr.FwkReport.reportEvery = 1
 
 # Input source
 process.source = cms.Source("EmptySource")
